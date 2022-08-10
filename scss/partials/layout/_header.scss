@@ -1,0 +1,11 @@
+.header {
+    border-bottom: .3px;
+    border-bottom-style: solid;
+    border-bottom-color: rgba(218, 218, 221, 0.38);
+    &__link {
+        .logo {
+            width: 5rem;
+            margin: 1.7rem;
+        }
+    }   
+}

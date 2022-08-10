@@ -1,0 +1,18 @@
+.main-nav {
+    display: block;
+    &__title1 {
+        display: block;
+    }
+    &___section1 {
+        display: block;
+        .main-nav__list {
+            display: block;
+            .main-nav__item {
+                display: block;
+                .main-nav__link {
+                    display: block;
+                }
+            }
+        }
+    }  
+}
