@@ -46,7 +46,7 @@ body {
 .link {
   text-decoration: none;
   font-family: 'pkmnfont';
-  font-size: 11px;
+  font-size: 10px;
   letter-spacing: 2px; }
 
 .welcome-section {
@@ -72,6 +72,10 @@ body {
       .welcome-section .welcome-section__body .welcome-section__item h3 {
         font-family: 'ChronoType';
         font-size: 24px; }
+    .welcome-section .welcome-section__body .welcome-section__links {
+      display: flex;
+      flex-direction: row;
+      gap: 13px; }
 
 @keyframes aparecer--index--container {
   from {
