@@ -1,0 +1,16 @@
+@import "partials/abstracts/variables";
+
+.btn {
+    border: none;
+    color: $white__medium;
+    text-decoration: none;
+    border-radius: 4px;
+    background-color: $purpura__light;
+    transition-duration: 0.2s;
+    cursor: pointer;
+    padding: 0.8rem;
+    &:hover{
+        background-color: rgb(30, 18, 71); /* Green */
+        color:rgb(221, 212, 237);
+    }
+}

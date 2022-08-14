@@ -1,0 +1,45 @@
+
+// WELCOME SECTION
+.welcome-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    .welcome-section__body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        text-align: center;
+        gap: .6rem;
+        width: 100vw;
+        height: 80vh;
+        animation: aparecer--index--container  450ms ease-in;
+        overflow: hidden;
+        
+        .welcome-section__item {
+            display: flex;
+            flex-direction: column;
+            h3 {
+                font-family: 'ChronoType';
+                font-size: 24px;
+            }
+            
+        }
+    }
+}
+@keyframes aparecer--index--container {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+.round-img {
+    width: 12.8rem;
+    clip-path: circle();
+}
+
+// MAIN
+.main-section {
+    display: none;
+}
+

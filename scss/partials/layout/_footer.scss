@@ -1,6 +1,7 @@
 @import "../abstracts/variables";
 
 .footer {
+    display: none;
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -9,7 +10,6 @@
     border-top-style: solid;
     border-top-width: 1px;
     border-top-color: rgba(243, 241, 248, 0.259);
-    display: flex;
     flex-direction: row;
     justify-content: space-between;
     background-color: $negro;
