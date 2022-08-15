@@ -2,14 +2,19 @@
 
 .footer-container {
     position: static;
+    height: 4.4rem;
+
 }
 .footer {
     display: flex;
-    position: absolute;
+    position: fixed;
     bottom: 0;
-    width: 100%;
+    width: 75%;
+    align-items: center;
+    text-align: center;
+    left: 2%;
     height: 4.4rem;
-    clear:both;
+    //clear:both;
     border-top-style: solid;
     border-top-width: 1px;
     border-top-color: rgba(243, 241, 248, 0.259);

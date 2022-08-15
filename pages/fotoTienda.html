@@ -10,28 +10,37 @@
 <body>
     <div id="root">
         <!-- HEADER -->
-        <header class="header">
-            <a href="../index.html" class="link header__link"><img src="../images/logo1.png" class="logo"></a>
-        </header>
+        <div class="header-container">
+            <header class="header">
+                <a href="../index.html" class="link header__link"><img src="../images/logo1.png" class="logo"></a>
+            </header>
+        </div>
+        
 
         <!-- NAV BAR -->
-        <nav class="main-nav">
-            <h2 class="main-nav__title1">Web development projects</h2>
-            <div class="main-nav___section1">
-                <ul class="main-nav__list">
-                    <li class="main-nav__item">
-                        <a href="../pages/fotoTienda.html" class="link main-nav__link">Tienda de Fotoproductos</a>
-                    </li>
-                    <li class="main-nav__item">
-                        <a href="../pages/centroPoke.html" class="link main-nav__link">Centro Pokemon Privatizado</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-
+        <div class="nav-container">
+            <nav class="main-nav">
+                <h2 class="main-nav__title1">Web development projects</h2>
+                <div class="main-nav___section1">
+                    <ul class="main-nav__list">
+                        <li class="main-nav__item">
+                            <a href="../pages/fotoTienda.html" class="link main-nav__link">Tienda de Fotoproductos</a>
+                        </li>
+                        <li class="main-nav__item">
+                            <a href="../pages/centroPoke.html" class="link main-nav__link">Centro Pokemon Privatizado</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        
         <!-- MAIN SECTION -->
         <div class="store-section">
-            <!-- MAIN -->
+            <!-- EMPTY NAV UNDER REAL NAV (FOR LAYOUT)-->
+            <div class="empty-nav">
+
+            </div>
+            <!-- MAIN --> 
             <div class="store-section__title">
                 <div>
                     <h1>Tienda de fotoProductos</h1>
@@ -39,7 +48,7 @@
                 <div class="store-section__cart-items">
                     <h3>Items en el carrito:</h3>
                     <div id="counter"><p>0</p></div>
-                    <button id="store-section__cart-btn">Ver carrito</button>
+                    <button class="btn" id="store-section__cart-btn">Ver carrito</button>
                 </div>
             </div>
             <main class="store-section__products">
@@ -109,10 +118,9 @@
                 
 
             </main>
-
+            
             <!-- EMPTY SECTION -->
             <div class="store-section__empty">
-
             </div>
         </div>
 

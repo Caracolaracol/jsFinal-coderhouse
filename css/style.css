@@ -9,6 +9,7 @@
 
 body {
   min-height: 100vh;
+  max-height: 100vh;
   position: relative;
   background-color: #010102; }
 
@@ -52,11 +53,10 @@ h1 {
 
 .store-section {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: .5fr 1.5fr 1fr;
-  gap: 0px 0px;
-  grid-template-areas: "store-section__title store-section__title store-section__empty" "store-section__products store-section__products store-section__empty" "store-section__products store-section__products store-section__empty";
-  max-height: 80vh; }
+  gap: 1px 0px;
+  grid-template-areas: "empty-nav store-section__title store-section__title store-section__empty" "empty-nav store-section__products store-section__products store-section__empty" "empty-nav store-section__products store-section__products store-section__empty"; }
   .store-section .store-section__title {
     display: flex;
     flex-direction: column; }
@@ -72,10 +72,6 @@ h1 {
     overflow: auto; }
     .store-section .store-section__products .cards img {
       width: 10rem; }
-  .store-section .store-section__empty {
-    border-left-style: solid;
-    border-left-width: 1px;
-    border-left-color: rgba(243, 241, 248, 0.259); }
 
 .store-section__title {
   grid-area: store-section__title; }
@@ -85,6 +81,10 @@ h1 {
 
 .store-section__products {
   grid-area: store-section__products; }
+
+.empty-nav {
+  grid-area: empty-nav;
+  width: 16rem; }
 
 .welcome-section {
   display: flex;
@@ -155,15 +155,18 @@ h1 {
   display: none; }
 
 .footer-container {
-  position: static; }
+  position: static;
+  height: 4.4rem; }
 
 .footer {
   display: flex;
-  position: absolute;
+  position: fixed;
   bottom: 0;
-  width: 100%;
+  width: 75%;
+  align-items: center;
+  text-align: center;
+  left: 2%;
   height: 4.4rem;
-  clear: both;
   border-top-style: solid;
   border-top-width: 1px;
   border-top-color: rgba(243, 241, 248, 0.259);
@@ -174,15 +177,31 @@ h1 {
 .footer-show {
   display: none; }
 
+.header-container {
+  height: 150px; }
+
 .header {
+  position: fixed;
+  width: 75%;
+  align-items: center;
+  text-align: center;
+  left: 2%;
+  background-color: black;
   border-bottom: .3px;
   border-bottom-style: solid;
   border-bottom-color: rgba(218, 218, 221, 0.141); }
   .header__link .logo {
+    float: left;
     width: 5rem;
     margin: 1.7rem; }
 
+.nav-container {
+  position: static;
+  height: 100%;
+  width: 16rem; }
+
 .main-nav {
+  position: fixed;
   margin: 1.6rem;
   width: 14rem;
   float: left; }
