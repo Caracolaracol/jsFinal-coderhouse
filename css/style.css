@@ -128,7 +128,7 @@ h1 {
     text-align: center;
     gap: .6rem;
     width: 100vw;
-    height: 80vh;
+    height: 75vh;
     animation: aparecer--index--container  450ms ease-in;
     overflow: hidden; }
     .welcome-section .welcome-section__body .welcome-section__item {
@@ -146,18 +146,25 @@ h1 {
         font-family: 'ChronoType';
         font-size: 19px;
         letter-spacing: 1px; }
-    .welcome-section .welcome-section__body .transition-img .round-img1 {
-      position: fixed;
-      z-index: 99;
-      animation-name: transition-img-FadeInOut;
-      animation-timing-function: ease-in-out;
-      animation-iteration-count: infinite;
-      animation-duration: 4s;
-      animation-direction: alternate; }
-    .welcome-section .welcome-section__body .transition-img .round-img {
-      width: 13.5rem;
-      clip-path: circle();
-      transition: opacity 2s ease-in-out; }
+    .welcome-section .welcome-section__body .transition-img {
+      display: block !important;
+      width: 14rem; }
+      .welcome-section .welcome-section__body .transition-img .round-img2 {
+        position: sticky; }
+      .welcome-section .welcome-section__body .transition-img .round-img1 {
+        position: relative;
+        top: 188.9px;
+        z-index: 99;
+        box-shadow: 10px 5px 5px black;
+        animation-name: transition-img-FadeInOut;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-duration: 4s;
+        animation-direction: alternate; }
+      .welcome-section .welcome-section__body .transition-img .round-img {
+        width: 12.5rem;
+        clip-path: circle();
+        transition: opacity 2s ease-in-out; }
     .welcome-section .welcome-section__body .welcome-section__links {
       display: flex;
       flex-direction: row;

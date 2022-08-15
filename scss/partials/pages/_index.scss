@@ -14,7 +14,7 @@
         text-align: center;
         gap: .6rem;
         width: 100vw;
-        height: 80vh;
+        height: 75vh;
         animation: aparecer--index--container  450ms ease-in;
         overflow: hidden;
         .welcome-section__item {
@@ -39,19 +39,32 @@
             }
         }
         .transition-img {
+            display: block !important;
+            width: 14rem;
+            //overflow: hidden;
+            .round-img2 {
+                position: sticky;
+                //width: 12rem !important;
+                
+            }
             .round-img1 {
-                position: fixed;
+                position: relative;
+                top: 188.9px;
                 z-index: 99;
+                
+                box-shadow: 10px 5px 5px black;
                 animation-name: transition-img-FadeInOut;
                 animation-timing-function: ease-in-out;
                 animation-iteration-count: infinite;
                 animation-duration: 4s;
                 animation-direction: alternate;
+                
             }
             .round-img {
-                width: 13.5rem;
+                width: 12.5rem;
                 clip-path: circle();
                 transition: opacity 2s ease-in-out;
+                
             }
         }
         .welcome-section__links {
