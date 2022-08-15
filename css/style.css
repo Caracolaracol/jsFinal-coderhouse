@@ -53,7 +53,7 @@ h1 {
 
 .store-section {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1.2fr .8fr;
   grid-template-rows: .2fr 1.8fr 1.1fr;
   gap: 1px 0px;
   grid-template-areas: "empty-nav store-section__title store-section__title store-section__empty" "empty-nav store-section__products store-section__products store-section__empty" "empty-nav store-section__products store-section__products store-section__empty"; }
@@ -70,7 +70,7 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
-    gap: 2rem;
+    gap: 1rem;
     text-align: center;
     padding: .4rem;
     padding-top: 1rem;
