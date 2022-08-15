@@ -9,6 +9,14 @@
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     overflow: auto;
 }
+
+body {
+    min-height:100vh;  
+    max-height: 100vh;
+    position:relative; 
+    background-color: $negro;
+}
+
 // FONTS
 @font-face {
     font-family: 'pkmnfont';
@@ -21,19 +29,15 @@
     font-family: 'Cormorant';
     src: url('/css/fonts/Cormorant-Bold.ttf') format('truetype');
     font-style: normal;
-    font-weight: bold;
-}
-@font-face {
-    font-family: 'Tompkins';
-    src: url('/css/fonts/Tompkins\ DEMO.ttf') format('truetype');
-    font-style: normal;
     font-weight: normal;
 }
+
 @font-face {
     font-family: 'ChronoType';
     src: url('/css/fonts/ChronoType.ttf') format('truetype');
     font-style: normal;
     font-weight: bold;
+    
 }
 @font-face {
     font-family: 'Tommy';
@@ -41,13 +45,28 @@
     font-style: normal;
     font-weight: normal;
 }
-body {
-    min-height:100vh;  
-    max-height: 100vh;
-    position:relative; 
-    background-color: $negro;
+
+
+// Typography
+h1 {
+    font-family: 'ChronoType';
+    font-size: 24px;
 }
 
+h2 {
+    font-family: 'ChronoType';
+    font-size: 15px;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+p {
+    font-family: 'ChronoType';
+    font-size: 19px;
+    letter-spacing: 1px;
+}
+
+// others
 .link {
     text-decoration: none;
     font-family: 'pkmnfont';

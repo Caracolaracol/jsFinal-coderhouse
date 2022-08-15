@@ -7,6 +7,12 @@
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   overflow: auto; }
 
+body {
+  min-height: 100vh;
+  max-height: 100vh;
+  position: relative;
+  background-color: #010102; }
+
 @font-face {
   font-family: 'pkmnfont';
   src: url("/css/fonts/PKMN RBYGSC.ttf") format("truetype");
@@ -16,12 +22,6 @@
 @font-face {
   font-family: 'Cormorant';
   src: url("/css/fonts/Cormorant-Bold.ttf") format("truetype");
-  font-style: normal;
-  font-weight: bold; }
-
-@font-face {
-  font-family: 'Tompkins';
-  src: url("/css/fonts/Tompkins DEMO.ttf") format("truetype");
   font-style: normal;
   font-weight: normal; }
 
@@ -37,11 +37,20 @@
   font-style: normal;
   font-weight: normal; }
 
-body {
-  min-height: 100vh;
-  max-height: 100vh;
-  position: relative;
-  background-color: #010102; }
+h1 {
+  font-family: 'ChronoType';
+  font-size: 24px; }
+
+h2 {
+  font-family: 'ChronoType';
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: 3px; }
+
+p {
+  font-family: 'ChronoType';
+  font-size: 19px;
+  letter-spacing: 1px; }
 
 .link {
   text-decoration: none;
@@ -69,9 +78,18 @@ body {
     .welcome-section .welcome-section__body .welcome-section__item {
       display: flex;
       flex-direction: column; }
-      .welcome-section .welcome-section__body .welcome-section__item h3 {
-        font-family: 'ChronoType';
-        font-size: 24px; }
+    .welcome-section .welcome-section__body .transition-img .round-img1 {
+      position: fixed;
+      z-index: 99;
+      animation-name: transition-img-FadeInOut;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+      animation-duration: 4s;
+      animation-direction: alternate; }
+    .welcome-section .welcome-section__body .transition-img .round-img {
+      width: 12.8rem;
+      clip-path: circle();
+      transition: opacity 2s ease-in-out; }
     .welcome-section .welcome-section__body .welcome-section__links {
       display: flex;
       flex-direction: row;
@@ -83,9 +101,15 @@ body {
   to {
     opacity: 1; } }
 
-.round-img {
-  width: 12.8rem;
-  clip-path: circle(); }
+@keyframes transition-img-FadeInOut {
+  0% {
+    opacity: 1; }
+  45% {
+    opacity: 1; }
+  55% {
+    opacity: 0; }
+  100% {
+    opacity: 0; } }
 
 .main-section {
   display: none; }
