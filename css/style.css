@@ -126,7 +126,6 @@ h1 {
     text-align: center;
     background-color: #020204;
     gap: .6rem;
-    width: 100vw;
     height: 75vh;
     animation: aparecerindexcontainer  450ms ease-in;
     overflow: hidden; }
@@ -170,7 +169,18 @@ h1 {
         clip-path: circle();
         transition: opacity 4s ease-in-out; }
     .welcome-section .welcome-section__body .ws-height {
-      height: 5rem; }
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 5rem;
+      width: 55rem;
+      overflow: hidden; }
+      .welcome-section .welcome-section__body .ws-height h1 {
+        overflow: hidden; }
+      .welcome-section .welcome-section__body .ws-height p {
+        overflow: hidden; }
+      .welcome-section .welcome-section__body .ws-height h2 {
+        overflow: hidden; }
     .welcome-section .welcome-section__body .welcome-section__links {
       display: flex;
       flex-direction: row;

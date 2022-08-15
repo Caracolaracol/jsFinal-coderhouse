@@ -11,7 +11,7 @@
         text-align: center;
         background-color:$negro;
         gap: .6rem;
-        width: 100vw;
+        //width: 100vw;
         height: 75vh;
         animation: aparecerindexcontainer  450ms ease-in;
         overflow: hidden;
@@ -73,7 +73,25 @@
             
         }
         .ws-height {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             height: 5rem;
+            width: 55rem;
+            overflow: hidden;
+            h1 {
+
+                overflow: hidden;
+            }
+            p {
+
+                overflow: hidden;
+            }
+            h2 {
+
+                overflow: hidden;
+            }
+
         }
         .welcome-section__links {
             display: flex;
