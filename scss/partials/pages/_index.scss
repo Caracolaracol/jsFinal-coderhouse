@@ -12,6 +12,7 @@
         align-content: center;
         justify-content: center;
         text-align: center;
+        background-color:$negro;
         gap: .6rem;
         width: 100vw;
         height: 75vh;
@@ -41,16 +42,20 @@
         .transition-img {
             display: block !important;
             width: 16rem;
-            //overflow: hidden;
+            //position: relative;
+            //div {
+                //overflow: hidden;
             .round-img2 {
                 position: sticky;
-                //width: 12rem !important;
-                
+                animation-name: transition-img-FadeInOut;
+                animation-timing-function: ease-in-out;
+                animation-iteration-count: infinite;
+                animation-duration: 4s;
+                animation-direction: alternate-reverse;
             }
             .round-img1 {
                 position: relative;
                 top: 203.5px;
-                left: -.1px;
                 z-index: 99;
                 animation-name: transition-img-FadeInOut;
                 animation-timing-function: ease-in-out;
@@ -58,13 +63,16 @@
                 animation-duration: 4s;
                 animation-direction: alternate;
                 
+                
             }
             .round-img {
                 width: 13.5rem;
                 clip-path: circle();
-                transition: opacity 2s ease-in-out;
+                transition: opacity 4s ease-in-out;
                 
             }
+            //}
+            
         }
         .welcome-section__links {
             display: flex;

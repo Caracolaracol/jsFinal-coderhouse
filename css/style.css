@@ -127,6 +127,7 @@ h1 {
     align-content: center;
     justify-content: center;
     text-align: center;
+    background-color: #010102;
     gap: .6rem;
     width: 100vw;
     height: 75vh;
@@ -151,11 +152,15 @@ h1 {
       display: block !important;
       width: 16rem; }
       .welcome-section .welcome-section__body .transition-img .round-img2 {
-        position: sticky; }
+        position: sticky;
+        animation-name: transition-img-FadeInOut;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-duration: 4s;
+        animation-direction: alternate-reverse; }
       .welcome-section .welcome-section__body .transition-img .round-img1 {
         position: relative;
         top: 203.5px;
-        left: -.1px;
         z-index: 99;
         animation-name: transition-img-FadeInOut;
         animation-timing-function: ease-in-out;
@@ -165,7 +170,7 @@ h1 {
       .welcome-section .welcome-section__body .transition-img .round-img {
         width: 13.5rem;
         clip-path: circle();
-        transition: opacity 2s ease-in-out; }
+        transition: opacity 4s ease-in-out; }
     .welcome-section .welcome-section__body .welcome-section__links {
       display: flex;
       flex-direction: row;
