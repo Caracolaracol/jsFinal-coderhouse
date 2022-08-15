@@ -20,28 +20,28 @@ body {
 // FONTS
 @font-face {
     font-family: 'pkmnfont';
-    src: url('/css/fonts/PKMN\ RBYGSC.ttf') format('truetype');
+    src: url('./fonts/PKMN\ RBYGSC.ttf') format('truetype');
     font-style: normal;
     font-weight: normal;
 }
 
 @font-face {
     font-family: 'Cormorant';
-    src: url('/css/fonts/Cormorant-Bold.ttf') format('truetype');
+    src: url('./fonts/Cormorant-Bold.ttf') format('truetype');
     font-style: normal;
     font-weight: normal;
 }
 
 @font-face {
     font-family: 'ChronoType';
-    src: url('/css/fonts/ChronoType.ttf') format('truetype');
+    src: url('./fonts/ChronoType.ttf') format('truetype');
     font-style: normal;
     font-weight: bold;
     
 }
 @font-face {
     font-family: 'Tommy';
-    src: url('/css/fonts/MADE\ TOMMY\ Regular_PERSONAL\ USE.otf') format('truetype');
+    src: url('./fonts/MADE\ TOMMY\ Regular_PERSONAL\ USE.otf') format('truetype');
     font-style: normal;
     font-weight: normal;
 }
