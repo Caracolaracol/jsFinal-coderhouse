@@ -1,5 +1,7 @@
 .main-nav {
-    display: none;
+    margin: 1.6rem;
+    width: 14rem;
+    float: left;
     &__title1 {
         display: block;
     }
@@ -7,12 +9,19 @@
         display: block;
         .main-nav__list {
             display: block;
+            padding-bottom: .2rem;
+            padding-top: .2rem;
             .main-nav__item {
                 display: block;
                 .main-nav__link {
                     display: block;
+                    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                    font-size: 14px;
                 }
             }
         }
     }  
+}
+.main-nav-show {
+    display: none;
 }

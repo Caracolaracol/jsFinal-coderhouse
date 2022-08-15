@@ -9,7 +9,6 @@
 
 body {
   min-height: 100vh;
-  max-height: 100vh;
   position: relative;
   background-color: #010102; }
 
@@ -38,25 +37,54 @@ body {
   font-weight: normal; }
 
 h1 {
-  font-family: 'ChronoType';
-  font-size: 24px; }
-
-h2 {
-  font-family: 'ChronoType';
-  font-size: 15px;
-  font-weight: 900;
-  letter-spacing: 3px; }
-
-p {
-  font-family: 'ChronoType';
-  font-size: 19px;
-  letter-spacing: 1px; }
+  font-size: 2rem; }
 
 .link {
   text-decoration: none;
   font-family: 'pkmnfont';
   font-size: 10px;
   letter-spacing: 2px; }
+
+.main-nav__link {
+  letter-spacing: normal;
+  font-size: 16px !important;
+  margin: 3px; }
+
+.store-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: .5fr 1.5fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas: "store-section__title store-section__title store-section__empty" "store-section__products store-section__products store-section__empty" "store-section__products store-section__products store-section__empty";
+  max-height: 80vh; }
+  .store-section .store-section__title {
+    display: flex;
+    flex-direction: column; }
+    .store-section .store-section__title .store-section__cart-items {
+      display: flex;
+      flex-direction: row;
+      justify-content: end;
+      gap: 1rem;
+      align-items: center; }
+  .store-section .store-section__products .cards {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: auto; }
+    .store-section .store-section__products .cards img {
+      width: 10rem; }
+  .store-section .store-section__empty {
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-left-color: rgba(243, 241, 248, 0.259); }
+
+.store-section__title {
+  grid-area: store-section__title; }
+
+.store-section__empty {
+  grid-area: store-section__empty; }
+
+.store-section__products {
+  grid-area: store-section__products; }
 
 .welcome-section {
   display: flex;
@@ -78,6 +106,18 @@ p {
     .welcome-section .welcome-section__body .welcome-section__item {
       display: flex;
       flex-direction: column; }
+      .welcome-section .welcome-section__body .welcome-section__item h1 {
+        font-family: 'ChronoType';
+        font-size: 24px; }
+      .welcome-section .welcome-section__body .welcome-section__item h2 {
+        font-family: 'ChronoType';
+        font-size: 15px;
+        font-weight: 900;
+        letter-spacing: 3px; }
+      .welcome-section .welcome-section__body .welcome-section__item p {
+        font-family: 'ChronoType';
+        font-size: 19px;
+        letter-spacing: 1px; }
     .welcome-section .welcome-section__body .transition-img .round-img1 {
       position: fixed;
       z-index: 99;
@@ -87,7 +127,7 @@ p {
       animation-duration: 4s;
       animation-direction: alternate; }
     .welcome-section .welcome-section__body .transition-img .round-img {
-      width: 12.8rem;
+      width: 13.5rem;
       clip-path: circle();
       transition: opacity 2s ease-in-out; }
     .welcome-section .welcome-section__body .welcome-section__links {
@@ -111,11 +151,14 @@ p {
   100% {
     opacity: 0; } }
 
-.main-section {
+.main-section-show {
   display: none; }
 
+.footer-container {
+  position: static; }
+
 .footer {
-  display: none;
+  display: flex;
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -128,26 +171,38 @@ p {
   justify-content: space-between;
   background-color: #010102; }
 
+.footer-show {
+  display: none; }
+
 .header {
   border-bottom: .3px;
   border-bottom-style: solid;
-  border-bottom-color: rgba(218, 218, 221, 0.38); }
+  border-bottom-color: rgba(218, 218, 221, 0.141); }
   .header__link .logo {
     width: 5rem;
     margin: 1.7rem; }
 
 .main-nav {
-  display: none; }
+  margin: 1.6rem;
+  width: 14rem;
+  float: left; }
   .main-nav__title1 {
     display: block; }
   .main-nav___section1 {
     display: block; }
     .main-nav___section1 .main-nav__list {
-      display: block; }
+      display: block;
+      padding-bottom: .2rem;
+      padding-top: .2rem; }
       .main-nav___section1 .main-nav__list .main-nav__item {
         display: block; }
         .main-nav___section1 .main-nav__list .main-nav__item .main-nav__link {
-          display: block; }
+          display: block;
+          font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+          font-size: 14px; }
+
+.main-nav-show {
+  display: none; }
 
 .btn {
   border: none;

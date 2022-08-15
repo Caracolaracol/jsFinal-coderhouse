@@ -1,15 +1,14 @@
 
 // HTML SELECTORS
-const mainNav = document.querySelector('.main-nav')
+const mainNav = document.querySelector('.main-nav-show')
 const welcomeSection = document.querySelector('.welcome-section')
-const mainSection = document.querySelector('.main-section')
-const footer = document.querySelector('.footer')
+const mainSection = document.querySelector('.main-section-show')
+const footer = document.querySelector('.footer-show')
 // SELECTOR BTN ENTER WEB DEVELOPMENT PROJECTS
 const btnEnterSite = document.querySelector('.welcome-section__btn')
 // EVENT SHOW MAIN
 btnEnterSite.addEventListener('click', function(){
     welcomeSection.style.display = 'none'
-
     mainNav.style.display = 'block'
     mainNav.style.animation = 'aparecer--index--container  450ms ease-in'
     mainSection.style.display = 'block'
