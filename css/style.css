@@ -11,7 +11,7 @@ body {
   min-height: 100vh;
   max-height: 100vh;
   position: relative;
-  background-color: #010102; }
+  background-color: #020204; }
 
 @font-face {
   font-family: 'pkmnfont';
@@ -119,7 +119,7 @@ h1 {
   justify-content: center;
   align-items: center;
   align-content: center;
-  background-color: #010102; }
+  background-color: #020204; }
   .welcome-section .welcome-section__body {
     display: flex;
     flex-direction: column;
@@ -127,7 +127,7 @@ h1 {
     align-content: center;
     justify-content: center;
     text-align: center;
-    background-color: #010102;
+    background-color: #020204;
     gap: .6rem;
     width: 100vw;
     height: 75vh;
@@ -196,13 +196,13 @@ h1 {
   display: none; }
 
 .main-section {
-  background-color: #010102; }
+  background-color: #020204; }
 
 .footer-container {
   position: absolute;
   bottom: 0;
   height: 4.4rem;
-  background-color: #010102; }
+  background-color: #020204; }
 
 .footer {
   display: flex;
@@ -218,14 +218,14 @@ h1 {
   border-top-color: rgba(243, 241, 248, 0.259);
   flex-direction: row;
   justify-content: space-between;
-  background-color: #010102; }
+  background-color: #020204; }
 
 .footer-show {
   display: none; }
 
 .header-container {
   height: 150px;
-  background-color: #010102; }
+  background-color: #020204; }
 
 .header {
   position: fixed;
@@ -233,7 +233,7 @@ h1 {
   align-items: center;
   text-align: center;
   left: 2%;
-  background-color: #010102;
+  background-color: #020204;
   border-bottom: .3px;
   border-bottom-style: solid;
   border-bottom-color: rgba(218, 218, 221, 0.141); }
