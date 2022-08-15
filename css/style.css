@@ -115,17 +115,12 @@ h1 {
   width: 16rem; }
 
 .welcome-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
   background-color: #020204; }
   .welcome-section .welcome-section__body {
     display: flex;
     flex-direction: column;
     align-items: center;
     align-content: center;
-    justify-content: center;
     text-align: center;
     background-color: #020204;
     gap: .6rem;
