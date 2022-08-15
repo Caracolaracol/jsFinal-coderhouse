@@ -9,13 +9,16 @@
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     overflow: auto;
 }
-
+#root {
+    background-color: $negro;
+}
 body {
     min-height:100vh;  
     max-height: 100vh;
     position:relative; 
     background-color: $negro;
 }
+
 
 // FONTS
 @font-face {
