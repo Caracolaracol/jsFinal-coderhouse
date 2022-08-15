@@ -40,7 +40,7 @@
         }
         .transition-img {
             display: block !important;
-            width: 14rem;
+            width: 16rem;
             //overflow: hidden;
             .round-img2 {
                 position: sticky;
@@ -49,7 +49,7 @@
             }
             .round-img1 {
                 position: relative;
-                top: 188.9px;
+                top: 203.6px;
                 z-index: 99;
                 
                 box-shadow: 10px 5px 5px black;
@@ -61,7 +61,7 @@
                 
             }
             .round-img {
-                width: 12.5rem;
+                width: 13.5rem;
                 clip-path: circle();
                 transition: opacity 2s ease-in-out;
                 

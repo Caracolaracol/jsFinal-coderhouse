@@ -148,12 +148,12 @@ h1 {
         letter-spacing: 1px; }
     .welcome-section .welcome-section__body .transition-img {
       display: block !important;
-      width: 14rem; }
+      width: 16rem; }
       .welcome-section .welcome-section__body .transition-img .round-img2 {
         position: sticky; }
       .welcome-section .welcome-section__body .transition-img .round-img1 {
         position: relative;
-        top: 188.9px;
+        top: 203.6px;
         z-index: 99;
         box-shadow: 10px 5px 5px black;
         animation-name: transition-img-FadeInOut;
@@ -162,7 +162,7 @@ h1 {
         animation-duration: 4s;
         animation-direction: alternate; }
       .welcome-section .welcome-section__body .transition-img .round-img {
-        width: 12.5rem;
+        width: 13.5rem;
         clip-path: circle();
         transition: opacity 2s ease-in-out; }
     .welcome-section .welcome-section__body .welcome-section__links {
