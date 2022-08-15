@@ -118,7 +118,8 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  align-content: center; }
+  align-content: center;
+  background-color: #010102; }
   .welcome-section .welcome-section__body {
     display: flex;
     flex-direction: column;
@@ -153,9 +154,9 @@ h1 {
         position: sticky; }
       .welcome-section .welcome-section__body .transition-img .round-img1 {
         position: relative;
-        top: 203.6px;
+        top: 203.5px;
+        left: -.1px;
         z-index: 99;
-        box-shadow: 10px 5px 5px black;
         animation-name: transition-img-FadeInOut;
         animation-timing-function: ease-in-out;
         animation-iteration-count: infinite;
@@ -213,7 +214,8 @@ h1 {
   display: none; }
 
 .header-container {
-  height: 150px; }
+  height: 150px;
+  background-color: #010102; }
 
 .header {
   position: fixed;
