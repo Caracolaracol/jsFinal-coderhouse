@@ -123,7 +123,6 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    align-content: center;
     text-align: center;
     background-color: #020204;
     gap: .6rem;
@@ -133,7 +132,8 @@ h1 {
     overflow: hidden; }
     .welcome-section .welcome-section__body .welcome-section__item {
       display: flex;
-      flex-direction: column; }
+      flex-direction: column;
+      gap: .3rem; }
       .welcome-section .welcome-section__body .welcome-section__item h1 {
         font-family: 'ChronoType';
         font-size: 24px; }
@@ -169,6 +169,8 @@ h1 {
         width: 13.5rem;
         clip-path: circle();
         transition: opacity 4s ease-in-out; }
+    .welcome-section .welcome-section__body .ws-height {
+      height: 5rem; }
     .welcome-section .welcome-section__body .welcome-section__links {
       display: flex;
       flex-direction: row;
