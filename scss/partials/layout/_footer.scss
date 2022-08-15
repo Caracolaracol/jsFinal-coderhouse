@@ -1,8 +1,10 @@
 @import "../abstracts/variables";
 
 .footer-container {
-    position: static;
+    position: absolute;
+    bottom: 0;
     height: 4.4rem;
+    background-color: $negro;
 }
 .footer {
     display: flex;

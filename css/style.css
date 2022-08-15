@@ -196,8 +196,10 @@ h1 {
   display: none; }
 
 .footer-container {
-  position: static;
-  height: 4.4rem; }
+  position: absolute;
+  bottom: 0;
+  height: 4.4rem;
+  background-color: #010102; }
 
 .footer {
   display: flex;
