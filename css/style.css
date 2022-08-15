@@ -195,6 +195,9 @@ h1 {
 .main-section-show {
   display: none; }
 
+.main-section {
+  background-color: #010102; }
+
 .footer-container {
   position: absolute;
   bottom: 0;

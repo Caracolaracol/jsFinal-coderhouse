@@ -1,3 +1,5 @@
+@import "../abstracts/variables";
+
 // WELCOME SECTION
 .welcome-section {
     display: flex;
@@ -99,3 +101,6 @@
     display: none;
 }
 
+.main-section {
+    background-color: $negro;
+}
