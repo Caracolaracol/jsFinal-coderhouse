@@ -18,7 +18,7 @@
         gap: .6rem;
         width: 100vw;
         height: 75vh;
-        animation: aparecer--index--container  450ms ease-in;
+        animation: aparecerindexcontainer  450ms ease-in;
         overflow: hidden;
         .welcome-section__item {
             display: flex;
@@ -85,7 +85,7 @@
         
     }
 }
-@keyframes aparecer--index--container {
+@keyframes aparecerindexcontainer {
     from {opacity: 0;}
     to {opacity: 1;}
 }

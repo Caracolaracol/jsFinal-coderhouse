@@ -131,7 +131,7 @@ h1 {
     gap: .6rem;
     width: 100vw;
     height: 75vh;
-    animation: aparecer--index--container  450ms ease-in;
+    animation: aparecerindexcontainer  450ms ease-in;
     overflow: hidden; }
     .welcome-section .welcome-section__body .welcome-section__item {
       display: flex;
@@ -176,7 +176,7 @@ h1 {
       flex-direction: row;
       gap: 13px; }
 
-@keyframes aparecer--index--container {
+@keyframes aparecerindexcontainer {
   from {
     opacity: 0; }
   to {
