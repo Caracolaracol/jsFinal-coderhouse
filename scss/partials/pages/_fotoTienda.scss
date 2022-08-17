@@ -1,7 +1,7 @@
 .store-section {
     display: grid; 
     grid-template-columns: .5fr 1.5fr 1.3fr .7fr; 
-    grid-template-rows: .1fr 5fr 5fr; 
+    grid-template-rows: .1fr 17fr 7fr; 
     gap: 1px 0px; 
     //min-height: 100vh;
     grid-template-areas: 
@@ -16,7 +16,7 @@
         width: 75%;
         background-color: $negro;
         flex-direction: column;
-        min-height: 10rem;
+        min-height: 6rem;
         .store-section__cart-items {
             display: flex;
             flex-direction: row;

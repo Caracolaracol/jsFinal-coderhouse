@@ -60,7 +60,7 @@ p {
 .store-section {
   display: grid;
   grid-template-columns: .5fr 1.5fr 1.3fr .7fr;
-  grid-template-rows: .1fr 5fr 5fr;
+  grid-template-rows: .1fr 17fr 7fr;
   gap: 1px 0px;
   grid-template-areas: "empty-nav store-section__title store-section__title store-section__empty" "empty-nav store-section__products store-section__products store-section__empty" "empty-nav store-section__products store-section__products store-section__empty"; }
   .store-section .store-section__title {
@@ -71,7 +71,7 @@ p {
     width: 75%;
     background-color: #020204;
     flex-direction: column;
-    min-height: 10rem; }
+    min-height: 6rem; }
     .store-section .store-section__title .store-section__cart-items {
       display: flex;
       flex-direction: row;
