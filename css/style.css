@@ -59,12 +59,17 @@ p {
 
 .store-section {
   display: grid;
-  grid-template-columns: 1fr 1fr 1.3fr .7fr;
-  grid-template-rows: .2fr 1.8fr 1.1fr;
+  grid-template-columns: .5fr 1.5fr 1.3fr .7fr;
+  grid-template-rows: .1fr 5fr 5fr;
   gap: 1px 0px;
   grid-template-areas: "empty-nav store-section__title store-section__title store-section__empty" "empty-nav store-section__products store-section__products store-section__empty" "empty-nav store-section__products store-section__products store-section__empty"; }
   .store-section .store-section__title {
     display: flex;
+    position: fixed;
+    top: 119px;
+    left: 16.2rem;
+    width: 75%;
+    background-color: #020204;
     flex-direction: column;
     min-height: 10rem; }
     .store-section .store-section__title .store-section__cart-items {
@@ -80,27 +85,23 @@ p {
     gap: .5rem;
     text-align: center;
     padding: .4rem;
-    padding-top: 1rem;
+    padding-top: 6rem;
     animation: aparecer  250ms ease-out; }
     .store-section .store-section__products .store-section__cards .store-section__card {
       transition-duration: 0.1s;
-      background-color: black;
+      background-color: rgba(28, 28, 57, 0.26);
       border-radius: 4px;
-      min-height: 15rem;
-      width: 14rem;
-      border-style: solid;
-      border-width: 1px;
-      border-color: rgba(80, 80, 80, 0.305); }
+      min-height: 27rem;
+      width: 27rem;
+      box-shadow: 0px 0px 12px #030303; }
       .store-section .store-section__products .store-section__cards .store-section__card:hover {
-        background-color: rgba(48, 31, 104, 0.385);
+        background-color: rgba(126, 126, 249, 0.175);
         transition-duration: .4s;
-        box-shadow: 0px 0px 5px #1e1247;
+        box-shadow: 0px 0px 5px rgba(57, 57, 116, 0.175);
         cursor: pointer; }
-      .store-section .store-section__products .store-section__cards .store-section__card .store-section__image-container {
-        height: 14rem; }
-        .store-section .store-section__products .store-section__cards .store-section__card .store-section__image-container img {
-          padding: .3rem;
-          width: 13.5rem; }
+      .store-section .store-section__products .store-section__cards .store-section__card .store-section__image-container img {
+        padding: 1rem;
+        width: 25rem; }
   .store-section .store-section__products .apart-section {
     display: none; }
     .store-section .store-section__products .apart-section .apart-section__card {
@@ -119,7 +120,11 @@ p {
         border-style: solid;
         border-width: 1px 1px 1px 0px;
         border-color: rgba(80, 80, 80, 0.305); }
-  .store-section .store-section__cart {
+  .store-section .store-section__cart-title {
+    display: none; }
+  .store-section .store-section__cart-products {
+    display: none; }
+  .store-section .store-section__empty {
     display: none; }
 
 @keyframes aparecer {
@@ -127,9 +132,6 @@ p {
     opacity: 0; }
   to {
     opacity: 1; } }
-
-.store-section__title {
-  grid-area: store-section__title; }
 
 .store-section__empty {
   grid-area: store-section__empty; }
