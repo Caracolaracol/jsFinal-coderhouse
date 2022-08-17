@@ -3,6 +3,7 @@
     position: static;
     height: 100%;
     width: 16rem;
+    
 }
 
 .main-nav {
@@ -10,6 +11,7 @@
     margin: 1.6rem;
     width: 14rem;
     float: left;
+    
     &__title1 {
         display: block;
     }
@@ -32,4 +34,9 @@
 }
 .main-nav-show {
     display: none;
+}
+
+@keyframes aparecernav {
+    from {opacity: 0;}
+    to {opacity: 1;}
 }
