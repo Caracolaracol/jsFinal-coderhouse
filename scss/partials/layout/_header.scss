@@ -1,7 +1,7 @@
 @import "../abstracts/variables";
 
 .header-container {
-    height: 150px;
+    height: 110px;
     background-color:$negro;
 }
 .header {
@@ -17,8 +17,8 @@
     &__link {
         .logo {
             float: left;
-            width: 5rem;
-            margin: 1.7rem;
+            width: 4.8rem;
+            margin: 1rem;
         }
     }   
 }

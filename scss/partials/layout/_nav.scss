@@ -1,14 +1,14 @@
 
 .nav-container {
-    position: static;
+    position: relative;
     height: 100%;
     width: 16rem;
-    
 }
 
 .main-nav {
     position: fixed;
     margin: 1.6rem;
+    margin-top: 1rem;
     width: 14rem;
     float: left;
     &__title1 {

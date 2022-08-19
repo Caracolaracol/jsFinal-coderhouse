@@ -1,36 +1,40 @@
 [
     {  
         "id":0,
-        "nombre":"Chinita",
-        "tamaño":"30x40cm, 40x30cm",
-        "precio":20000,
+        "nombre":"Chinita sobre amatista",
+        "tamaño":["20x30cm", "30x40cm", "40x30cm"],
+        "enmarcado": ["madera", "plastico", "sin marco"],
+        "precio":[10000, 15000, 26000],
         "enStock":3,
         "imagen":"print1.jpg",
-        "descripcion":""
+        "descripcion":"Chinita bailando cha cha chá sobre una amatista morada."
     },
     {  
         "id":1,
-        "nombre":"2 Psillobora picta",
-        "tamaño":"30x40cm, 40x30cm",
-        "precio":20000,
+        "nombre":"Chinitas panda",
+        "tamaño":["20x30cm", "30x40cm", "40x30cm"],
+        "enmarcado": ["madera", "plastico", "sin marco"],
+        "precio":[10000, 15000, 26000],
         "enStock":3,
         "imagen":"print2.jpg",
         "descripcion": ""
     },
     {
         "id":2,
-        "nombre":"gorgojo de la rosa",
-        "tamaño":"30x40cm, 40x30cm",
-        "precio":20000,
+        "nombre":"Gorgojo de la rosa",
+        "tamaño":["20x30cm", "30x40cm", "40x30cm"],
+        "enmarcado": ["madera", "plastico", "sin marco"],
+        "precio":[10000, 15000, 26000],
         "enStock":3,
         "imagen":"print3.jpg",
         "descripcion":""
     },
     {
         "id":3,
-        "nombre":"mariposa de la tarde",
-        "tamaño":"30x40cm, 40x30cm",
-        "precio":20000,
+        "nombre":"Mariposa de la tarde",
+        "tamaño":["20x30cm", "30x40cm", "40x30cm"],
+        "enmarcado": ["madera", "plastico", "sin marco"],
+        "precio":[10000, 15000, 26000],
         "enStock":3,
         "imagen":"print4.jpg",
         "descripcion":""
@@ -38,8 +42,9 @@
     {
         "id":4,
         "nombre":"Chinche",
-        "tamaño":"30x40cm, 40x30cm",
-        "precio":20000,
+        "tamaño":["20x30cm", "30x40cm", "40x30cm"],
+        "enmarcado": ["madera", "plastico", "sin marco"],
+        "precio":[10000, 15000, 26000],
         "enStock":3,
         "imagen":"print5.jpg",
         "descripcion":""
@@ -47,8 +52,9 @@
     {
         "id":5,
         "nombre":"Salticido y mosca",
-        "tamaño":"30x40cm, 40x30cm",
-        "precio":20000,
+        "tamaño":["20x30cm", "30x40cm", "40x30cm"],
+        "enmarcado": ["madera", "plastico", "sin marco"],
+        "precio":[10000, 15000, 26000],
         "enStock":3,
         "imagen":"print6.jpg",
         "descripcion":""
@@ -56,8 +62,9 @@
     {
         "id":6,
         "nombre":"Hormigon dorado alado",
-        "tamaño":"30x40cm, 40x30cm",
-        "precio":20000,
+        "tamaño":["20x30cm", "30x40cm", "40x30cm"],
+        "enmarcado": ["madera", "plastico", "sin marco"],
+        "precio":[10000, 15000, 26000],
         "enStock":3,
         "imagen":"print7.jpg",
         "descripcion":""
@@ -65,8 +72,9 @@
     {
         "id":7,
         "nombre":"Chanchito blanco",
-        "tamaño":"30x40cm, 40x30cm",
-        "precio":20000,
+        "tamaño":["20x30cm", "30x40cm", "40x30cm"],
+        "enmarcado": ["madera", "plastico", "sin marco"],
+        "precio":[10000, 15000, 26000],
         "enStock":3,
         "imagen":"print8.jpg",
         "descripcion":""
@@ -74,8 +82,9 @@
     {
         "id":8,
         "nombre":"Xylocopa Augusti",
-        "tamaño":"30x40cm, 40x30cm",
-        "precio":20000,
+        "tamaño":["20x30cm", "30x40cm", "40x30cm"],
+        "enmarcado": ["madera", "plastico", "sin marco"],
+        "precio":[10000, 15000, 26000],
         "enStock":3,
         "imagen":"print9.jpg",
         "descripcion":""
@@ -83,8 +92,9 @@
     {
         "id":9,
         "nombre":"Ariadna maxima",
-        "tamaño":"30x40cm, 40x30cm",
-        "precio":20000,
+        "tamaño":["20x30cm", "30x40cm", "40x30cm"],
+        "enmarcado": ["madera", "plastico", "sin marco"],
+        "precio":[10000, 15000, 26000],
         "enStock":3,
         "imagen":"printt10.jpg",
         "descripcion":""
@@ -92,8 +102,9 @@
     {
         "id":10,
         "nombre":"Coniopterígido",
-        "tamaño":"30x40cm, 40x30cm",
-        "precio":20000,
+        "tamaño":["20x30cm", "30x40cm", "40x30cm"],
+        "enmarcado": ["madera", "plastico", "sin marco"],
+        "precio":[10000, 15000, 26000],
         "enStock":3,
         "imagen":"print11.jpg",
         "descripcion":""
@@ -101,8 +112,9 @@
     {
         "id":11,
         "nombre":"Abeja joya",
-        "tamaño":"30x40cm, 40x30cm",
-        "precio":20000,
+        "tamaño":["20x30cm", "30x40cm", "40x30cm"],
+        "enmarcado": ["madera", "plastico", "sin marco"],
+        "precio":[10000, 15000, 26000],
         "enStock":3,
         "imagen":"print12.jpg",
         "descripcion":""
@@ -110,8 +122,9 @@
     {
         "id":12,
         "nombre":"Ichneumonido",
-        "tamaño":"30x40cm, 40x30cm",
-        "precio":20000,
+        "tamaño":["20x30cm", "30x40cm", "40x30cm"],
+        "enmarcado": ["madera", "plastico", "sin marco"],
+        "precio":[10000, 15000, 26000],
         "enStock":3,
         "imagen":"print13.jpg",
         "descripcion":""
@@ -119,8 +132,9 @@
     {
         "id":13,
         "nombre":"Araña pollito",
-        "tamaño":"30x40cm, 40x30cm",
-        "precio":20000,
+        "tamaño":["20x30cm", "30x40cm", "40x30cm"],
+        "enmarcado": ["madera", "plastico", "sin marco"],
+        "precio":[10000, 15000, 26000],
         "enStock":3,
         "imagen":"print14.jpg",
         "descripcion":""
@@ -128,8 +142,9 @@
     {
         "id":14,
         "nombre":"Chaqueta amarilla",
-        "tamaño":"30x40cm, 40x30cm",
-        "precio":20000,
+        "tamaño":["20x30cm", "30x40cm", "40x30cm"],
+        "enmarcado": ["madera", "plastico", "sin marco"],
+        "precio":[10000, 15000, 26000],
         "enStock":3,
         "imagen":"print15.jpg",
         "descripcion":""
@@ -137,8 +152,9 @@
     {
         "id":15,
         "nombre":"Escarabajo joya",
-        "tamaño":"30x40cm, 40x30cm",
-        "precio":20000,
+        "tamaño":["20x30cm", "30x40cm", "40x30cm"],
+        "enmarcado": ["madera", "plastico", "sin marco"],
+        "precio":[10000, 15000, 26000],
         "enStock":3,
         "imagen":"print16.jpg",
         "descripcion":""
@@ -146,8 +162,9 @@
     {
         "id":16,
         "nombre":"Mariposa de la tarde",
-        "tamaño":"30x40cm, 40x30cm",
-        "precio":20000,
+        "tamaño":["20x30cm", "30x40cm", "40x30cm"],
+        "enmarcado": ["madera", "plastico", "sin marco"],
+        "precio":[10000, 15000, 26000],
         "enStock":3,
         "imagen":"print17.jpg",
         "descripcion":""
@@ -155,8 +172,9 @@
     {
         "id":17,
         "nombre":"Hormigon dorado alado",
-        "tamaño":"30x40cm, 40x30cm",
-        "precio":20000,
+        "tamaño":["20x30cm", "30x40cm", "40x30cm"],
+        "enmarcado": ["madera", "plastico", "sin marco"],
+        "precio":[10000, 15000, 26000],
         "enStock":3,
         "imagen":"print18.jpg",
         "descripcion":""
@@ -164,8 +182,9 @@
     {
         "id":18,
         "nombre":"Pupa",
-        "tamaño":"30x40cm, 40x30cm",
-        "precio":20000,
+        "tamaño":["20x30cm", "30x40cm", "40x30cm"],
+        "enmarcado": ["madera", "plastico", "sin marco"],
+        "precio":[10000, 15000, 26000],
         "enStock":3,
         "imagen":"print19.jpg",
         "descripcion":""
@@ -173,8 +192,9 @@
     {
         "id":19,
         "nombre":"Hormiga",
-        "tamaño":"30x40cm, 40x30cm",
-        "precio":20000,
+        "tamaño":["20x30cm", "30x40cm", "40x30cm"],
+        "enmarcado": ["madera", "plastico", "sin marco"],
+        "precio":[10000, 15000, 26000],
         "enStock":3,
         "imagen":"print20.jpg",
         "descripcion":""
@@ -182,8 +202,9 @@
     {
         "id":20,
         "nombre":"Miriapodo",
-        "tamaño":"30x40cm, 40x30cm",
-        "precio":20000,
+        "tamaño":["20x30cm", "30x40cm", "40x30cm"],
+        "enmarcado": ["madera", "plastico", "sin marco"],
+        "precio":[10000, 15000, 26000],
         "enStock":3,
         "imagen":"print21.jpg",
         "descripcion":""
@@ -191,8 +212,9 @@
     {
         "id":21,
         "nombre":"Hormiga argentina",
-        "tamaño":"30x40cm, 40x30cm",
-        "precio":20000,
+        "tamaño":["20x30cm", "30x40cm", "40x30cm"],
+        "enmarcado": ["madera", "plastico", "sin marco"],
+        "precio":[10000, 15000, 26000],
         "enStock":3,
         "imagen":"print22.jpg",
         "descripcion":""

@@ -1,9 +1,9 @@
 @import "../abstracts/variables";
 
 .footer-container {
-    position: absolute;
     bottom: 0;
     height: 4.4rem;
+    min-width: 100vw;
     background-color: $negro;
 }
 .footer {

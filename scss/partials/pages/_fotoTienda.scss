@@ -1,28 +1,49 @@
 .store-section {
     display: grid; 
-    grid-template-columns: .5fr 1.5fr 1.3fr .7fr; 
-    grid-template-rows: .1fr 17fr 7fr; 
+    grid-template-columns: .7fr 1.3fr 1.3fr .7fr; 
+    grid-template-rows: 1fr 1fr 1fr; 
     gap: 1px 0px; 
     //min-height: 100vh;
     grid-template-areas: 
-    "empty-nav store-section__title store-section__title store-section__empty"
+    "empty-nav store-section__products store-section__products store-section__empty"
     "empty-nav store-section__products store-section__products store-section__empty"
     "empty-nav store-section__products store-section__products store-section__empty"; 
     .store-section__title {
         display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
         position: fixed;
-        top: 119px;
+        top: 95px;
         left: 16.2rem;
         width: 75%;
         background-color: $negro;
-        flex-direction: column;
         min-height: 6rem;
+        .store-section__back {
+            width: 12rem;
+            .store-section__back-btn {
+                display: none;
+            }
+        }
+        
+        .store-section__welcome {
+            h1 {
+                margin: 1rem;
+                padding-left: 12%;
+                width: 30rem;
+            }
+        }
+        .store-section__btn-back {
+            width: 12rem;
+            flex-grow: 3;
+        }
         .store-section__cart-items {
             display: flex;
             flex-direction: row;
             justify-content: end;
             gap: 1rem;
             align-items: center;
+            flex-grow: 0;
         }
     }
     .store-section__products {
@@ -30,32 +51,48 @@
             display:flex;
             flex-wrap: wrap;
             align-content: flex-start;
+            flex-grow: 3;
+            flex-basis: 0;
             gap: .5rem;
             text-align: center;
             padding:.4rem;
             padding-top: 6rem;
-            animation: aparecer  250ms ease-out;
+            animation: aparecer  750ms ease-in;
             .store-section__card {
+                display: flex;
+                flex-direction: column;
+                flex-basis: min-content;
                 transition-duration: 0.1s;
-                background-color: rgba(28, 28, 57, 0.26);
+                background-color: $lila__dark__transparent;
                 border-radius: 4px;  
-                min-height: 27rem;
-                width: 27rem;
-                //border-style: solid;
-                //border-width: 1px;
-                //border-color: rgba(80, 80, 80, 0.305);
+                min-height: 36rem;
+                width: 23rem;
                 box-shadow: 0px 0px 12px rgb(3, 3, 3);
                 &:hover {
-                    background-color: rgba(126, 126, 249, 0.175);
+                    background-color: $lila__light__transparent;
                     transition-duration: .4s;
                     box-shadow: 0px 0px 5px rgba(57, 57, 116, 0.175);
                     cursor: pointer;
                 }
+                
                 .store-section__image-container {
                     img {
-                        padding: 1rem;
-                        width: 25rem;
+                        margin: 1rem;
+                        width: 22rem;
+                        border-style: solid;
+                        border-width: 1px;
+                        border-color: rgba(0, 0, 0, 0.389);
+                        box-shadow: 0px 0px 5px black;
                     }
+                }
+                .store-section__body-card {
+                    .store-section__name {
+                        font-family: 'ChronoType';
+                        font-size: 2rem;
+                    }
+                }
+                p {
+                    color: rgba(181, 175, 193, 0.336);
                 }
             }
         }
@@ -65,22 +102,55 @@
                 display: flex;
                 width: 96%;
                 min-height: 10rem;
-                
+                padding-top: 6rem;
+                animation: aparecer  650ms ease-in;
                 .apart-section__container-image {
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     align-content: center;
+                    max-width: 50rem;
+                    max-height: 66rem;
+                    background-color: rgba(57, 57, 116, 0.175);
                     .apart-section__image {
-                        width: 25rem;
+                        margin: 1rem;
+                        max-height: 63rem;
+                        border-style: solid;
+                        border-width: 1px;
+                        border-color: rgba(0, 0, 0, 0.389);
+                        box-shadow: 0px 0px 5px black;
                     }
                 }
                 .apart-section__container-data {
+                    display: flex;
                     flex-grow: 2;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                    align-items: flex-end;
                     border-style: solid;
                     border-width: 1px 1px 1px 0px;
                     border-color: rgba(80, 80, 80, 0.305);
+                    .apart-section__title {
+                        flex: 1 0 auto;
+                        align-self: flex-start;
+                    }
+                    form {
+                        display: flex;
+                        flex-direction: column;
+                        max-width: 24rem;
+                        .apart-section__select{
+                            border-width: 0px;
+                            background-color: $purpura__light;
+                            width: 8rem;
+                            height: 2.3rem;
+                            //text-align: center;
+                        }
+                        .apart-section__onclick {
+                            padding: 4px;
+                        }
+                    }
                 }
+                
             }
         }
     }
@@ -91,7 +161,7 @@
         display: none;
     }
     .store-section__empty {
-        display: none;
+        display: block;
     }
 }
 @keyframes aparecer {
