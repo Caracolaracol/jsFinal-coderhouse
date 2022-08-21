@@ -4,9 +4,9 @@ const welcomeSection = document.querySelector('.welcome-section')
 const mainSection = document.querySelector('.main-section-show')
 const footer = document.querySelector('.footer-show')
 const navContainer = document.querySelector('.nav-container')
-// SELECTOR BTN ENTER WEB DEVELOPMENT PROJECTS
+// SELECTOR BTN "ENTER WEB DEVELOPMENT PROJECTS"
 const btnEnterSite = document.querySelector('.welcome-section__btn')
-// EVENT SHOW MAIN
+// EVENT SHOW MAIN SECTION
 btnEnterSite.addEventListener('click', function(){
     welcomeSection.style.display = 'none'
     mainNav.style.display = 'block'

@@ -1,17 +1,38 @@
 const productosContainer = document.querySelector('.store-section__cards')
 const btnBackTienda = document.querySelector('.store-section__back-btn')
+
+// localStorage
+let cart
+if(JSON.parse(localStorage.getItem('cart'))) { // si existe la clave carrito en el storage
+    cart = JSON.parse(localStorage.getItem('cart')) // asignar dicho valor en la variable carrito
+} else { // si no existe
+    localStorage.setItem('cart', JSON.stringify([])) // seteado el local storage
+    cart = JSON.parse(localStorage.getItem('cart')) // a la variable carrito quiero que sea lo que setié en el localStorage
+}
+
 pedirProductos()
 
+// GO BACK TO THE STORE
 btnBackTienda.addEventListener('click', function(){
     const apartSection = document.querySelector('.apart-section')
     const cardsSection = document.querySelector('.store-section__cards')
     btnBackTienda.style.display = 'none'
     apartSection.style.display = 'none'
     cardsSection.style.display = 'flex'
-    pedirProductos()
+    productSections.style.display = 'block'
+    verCarrito.style.display = 'block'
 })
 
+// SHOW CART
+const verCarrito = document.querySelector('#store-section__cart-btn')
+const productSections = document.querySelector('.store-section__products')
+verCarrito.addEventListener('click', function(){
+    verCarrito.style.display = 'none'
+    productSections.style.display = 'none'
+    btnBackTienda.style.display = 'block'
+})
 
+// FETCH FOTOPRODUCTOS
 function pedirProductos(){
     fetch('../json/fotoProductos.json').then(response => response.json())
 .then(productos => {
@@ -20,6 +41,7 @@ function pedirProductos(){
 })
 }
 
+// FUNCTION FOR SHOW PRODUCTS
 function showProducts(productos) {
     productos.forEach((fotoProducto) => {
         productosContainer.innerHTML += `
@@ -49,6 +71,8 @@ function showProducts(productos) {
     
 }
 
+
+// FUNCTION FOR SHOW PRODUCT AT THE APART SECTION
 async function showProduct (){
     const btnVerProducto = document.querySelectorAll('.store-section__card')
     const apartSection = document.querySelector('.apart-section')
@@ -77,26 +101,25 @@ async function showProduct (){
                             </div>
                             <form>
                                 <label for="size">Seleccione el tamaño</label>
-                                <select class="apart-section__select" name="size" id="">
+                                <select class="apart-section__select" name="size" id="size">
                                     <option value="30x40cm">${productoEncontrado.tamaño[0]}</option>
                                     <option value="30x40cm">${productoEncontrado.tamaño[1]}</option>
                                     <option value="30x40cm">${productoEncontrado.tamaño[2]}</option>
                                 </select>
-
                                 <label for="marco">y el tipo de marco</label>
-                                <select class="apart-section__select" name="marco" id="">
+                                <select class="apart-section__select" name="marco" id="marco">
                                     <option value="30x40cm">${productoEncontrado.enmarcado[0]}</option>
                                     <option value="30x40cm">${productoEncontrado.enmarcado[1]}</option>
                                     <option value="30x40cm">${productoEncontrado.enmarcado[2]}</option>
                                 </select>
-
+                                <div class="apart-section__price">
+                                    <h2>Total: $20000</h2>
+                                </div>
                                 <div class="apart-section__onclick">
                                     <button class="btn apart-section__btn-add" type="button">Agregar al carrito</button>
                                 </div>
                             </form>
-                            <div class="apart-section__price">
-                                <h2>$20000</h2>
-                            </div>
+                            
                             
                         </div>
                     </div>
@@ -104,10 +127,7 @@ async function showProduct (){
             })
         })
     }
-    
 }
-
-
 
 
 
