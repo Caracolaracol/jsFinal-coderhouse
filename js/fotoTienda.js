@@ -135,47 +135,51 @@ async function showProduct (){
                 `
 
                 // SHOW PRODUCT PRICE
-                const form = document.getElementById('form')
+                const form = document.querySelectorAll('.apart-section__select')
                 let precioProducto
-                form.addEventListener('click', function() {
-                    const selectSize = document.getElementById('size')
-                    const selectMarco = document.getElementById('marco')
-                    const sectionPrice = document.querySelector('.apart-section__price')
-                    let sizeUser = selectSize.value
-                    let marcoUser = selectMarco.value
-                    if (sizeUser == productoEncontrado.tamaño[0] && marcoUser == productoEncontrado.enmarcado[0]) {
-                        precioProducto = productoEncontrado.precio[0]
-                    }
-                    if (sizeUser == productoEncontrado.tamaño[0] && marcoUser == productoEncontrado.enmarcado[1]) {
-                        precioProducto = productoEncontrado.precio[1]
-                    }
-                    if (sizeUser == productoEncontrado.tamaño[0] && marcoUser == productoEncontrado.enmarcado[2]) {
-                        precioProducto = productoEncontrado.precio[2]
-                    }
-                    if (sizeUser == productoEncontrado.tamaño[1] && marcoUser == productoEncontrado.enmarcado[0]) {
-                        precioProducto = productoEncontrado.precio[3]
-                    }
-                    if (sizeUser == productoEncontrado.tamaño[1] && marcoUser == productoEncontrado.enmarcado[1]) {
-                        precioProducto = productoEncontrado.precio[4]
-                    }
-                    if (sizeUser == productoEncontrado.tamaño[1] && marcoUser == productoEncontrado.enmarcado[2]) {
-                        precioProducto = productoEncontrado.precio[5]
-                    }
-                    if (sizeUser == productoEncontrado.tamaño[2] && marcoUser == productoEncontrado.enmarcado[0]) {
-                        precioProducto = productoEncontrado.precio[6]
-                    }
-                    if (sizeUser == productoEncontrado.tamaño[2] && marcoUser == productoEncontrado.enmarcado[1]) {
-                        precioProducto = productoEncontrado.precio[7]
-                    }
-                    if (sizeUser == productoEncontrado.tamaño[2] && marcoUser == productoEncontrado.enmarcado[2]) {
-                        precioProducto = productoEncontrado.precio[8]
-                    }
-                    
-                    sectionPrice.innerHTML = `
-                    <h2>$${precioProducto}</h2>
-                    `
-                })
-                
+                let index = 0
+                let length = form.length
+                for(index; index < length; index++) {
+                    form[index].addEventListener('click', function() {
+                        const selectSize = document.getElementById('size')
+                        const selectMarco = document.getElementById('marco')
+                        const sectionPrice = document.querySelector('.apart-section__price')
+                        let sizeUser = selectSize.value
+                        let marcoUser = selectMarco.value
+
+                        if (sizeUser == productoEncontrado.tamaño[0] && marcoUser == productoEncontrado.enmarcado[0]) {
+                            precioProducto = productoEncontrado.precio[0]
+                        }
+                        if (sizeUser == productoEncontrado.tamaño[0] && marcoUser == productoEncontrado.enmarcado[1]) {
+                            precioProducto = productoEncontrado.precio[1]
+                        }
+                        if (sizeUser == productoEncontrado.tamaño[0] && marcoUser == productoEncontrado.enmarcado[2]) {
+                            precioProducto = productoEncontrado.precio[2]
+                        }
+                        if (sizeUser == productoEncontrado.tamaño[1] && marcoUser == productoEncontrado.enmarcado[0]) {
+                            precioProducto = productoEncontrado.precio[3]
+                        }
+                        if (sizeUser == productoEncontrado.tamaño[1] && marcoUser == productoEncontrado.enmarcado[1]) {
+                            precioProducto = productoEncontrado.precio[4]
+                        }
+                        if (sizeUser == productoEncontrado.tamaño[1] && marcoUser == productoEncontrado.enmarcado[2]) {
+                            precioProducto = productoEncontrado.precio[5]
+                        }
+                        if (sizeUser == productoEncontrado.tamaño[2] && marcoUser == productoEncontrado.enmarcado[0]) {
+                            precioProducto = productoEncontrado.precio[6]
+                        }
+                        if (sizeUser == productoEncontrado.tamaño[2] && marcoUser == productoEncontrado.enmarcado[1]) {
+                            precioProducto = productoEncontrado.precio[7]
+                        }
+                        if (sizeUser == productoEncontrado.tamaño[2] && marcoUser == productoEncontrado.enmarcado[2]) {
+                            precioProducto = productoEncontrado.precio[8]
+                        }
+                        
+                        sectionPrice.innerHTML = `
+                            <h2 class="${productoEncontrado.id}">$${precioProducto}</h2>
+                        `
+                    })
+                }
             })
         })
     }
@@ -185,27 +189,103 @@ async function showProduct (){
 async function addToCart(id) {
     fetch('../json/fotoProductos.json').then(response => response.json()).then(async productos => {
         let arrayProducts = await productos
-    if(cart.some((item) => item.id === id)) { // si el producto que quiero agregar ya existe en el carrito:
-        const itemFound = arrayProducts.find((fotoProd) => fotoProd.id == id) // find para saber que producto le corresponde el id, osea que fotoProd.id sea igual a lo que dice idBoton
-        const enCarrito = cart.find((fotoProd) => fotoProd.id == itemFound.id)
-        const carritoFiltrado = cart.filter(fotoProd => fotoProd.id != enCarrito.id) // filtrado de productos para traer los productos que no están en el carrito.
-        cart = [...carritoFiltrado, {...enCarrito, cantidad: enCarrito.cantidad + 1}] //agregar todos los productos(propiedad por propiedad) menos el que yo encontré en el carrito. agregar la cantidad que yo tenía en el carrito del producto +
-        const {nombre, enStock} = itemFound
-        console.log(`El producto ${nombre} tiene ${enStock} unidades en stock`)
-    } else {
-        const itemFound = arrayProducts.find((producto) => producto.id === id )
-        cart.push({...itemFound, cantidad: 1})
-        const {nombre, enStock} = itemFound
-        console.log(`El producto ${nombre} tiene ${enStock} unidades en stock`)
-    }
-    updateCart()
-    //contarProductos()
-    })
+        if(cart.some((item) => item.id === id)) { // si el producto que quiero agregar ya existe en el carrito:
+            const itemFound = arrayProducts.find((fotoProd) => fotoProd.id == id) // find para saber que producto le corresponde el id, osea que fotoProd.id sea igual a lo que dice idBoton
+            //
+            const selectSize = document.getElementById('size')
+            const selectMarco = document.getElementById('marco')
+            let sizeUser = selectSize.value
+            let marcoUser = selectMarco.value
+            
+            let precioFinalProducto
+            if (sizeUser == itemFound.tamaño[0] && marcoUser == itemFound.enmarcado[0]) {
+                precioFinalProducto = itemFound.precio[0]
+            }
+            if (sizeUser == itemFound.tamaño[0] && marcoUser == itemFound.enmarcado[1]) {
+                precioFinalProducto = itemFound.precio[1]
+            }
+            if (sizeUser == itemFound.tamaño[0] && marcoUser == itemFound.enmarcado[2]) {
+                precioFinalProducto = itemFound.precio[2]
+            }
+            if (sizeUser == itemFound.tamaño[1] && marcoUser == itemFound.enmarcado[0]) {
+                precioFinalProducto = itemFound.precio[3]
+            }
+            if (sizeUser == itemFound.tamaño[1] && marcoUser == itemFound.enmarcado[1]) {
+                precioFinalProducto = itemFound.precio[4]
+            }
+            if (sizeUser == itemFound.tamaño[1] && marcoUser == itemFound.enmarcado[2]) {
+                precioFinalProducto = itemFound.precio[5]
+            }
+            if (sizeUser == itemFound.tamaño[2] && marcoUser == itemFound.enmarcado[0]) {
+                precioFinalProducto = itemFound.precio[6]
+            }
+            if (sizeUser == itemFound.tamaño[2] && marcoUser == itemFound.enmarcado[1]) {
+                precioFinalProducto = itemFound.precio[7]
+            }
+            if (sizeUser == itemFound.tamaño[2] && marcoUser == itemFound.enmarcado[2]) {
+                precioFinalProducto = itemFound.precio[8]
+            }
+            console.log(precioFinalProducto)
+            //
+            const enCarrito = cart.find((fotoProd) => fotoProd.id == itemFound.id)
+            const carritoFiltrado = cart.filter(fotoProd => fotoProd.id != enCarrito.id) // filtrado de productos para traer los productos que no están en el carrito.
+            cart = [...carritoFiltrado, {...enCarrito, cantidad: enCarrito.cantidad + 1}] //agregar todos los productos(propiedad por propiedad) menos el que yo encontré en el carrito. agregar la cantidad que yo tenía en el carrito del producto +
+            const {nombre, enStock} = itemFound
+            console.log(`El producto ${nombre} tiene ${enStock} unidades en stock`)
+        } else {
+            const itemFound = arrayProducts.find((producto) => producto.id === id )
+            //
+            const selectSize = document.getElementById('size')
+            const selectMarco = document.getElementById('marco')
+            let sizeUser = selectSize.value
+            let marcoUser = selectMarco.value
+            
+            let precioFinalProducto
+            if (sizeUser == itemFound.tamaño[0] && marcoUser == itemFound.enmarcado[0]) {
+                precioFinalProducto = itemFound.precio[0]
+            }
+            if (sizeUser == itemFound.tamaño[0] && marcoUser == itemFound.enmarcado[1]) {
+                precioFinalProducto = itemFound.precio[1]
+            }
+            if (sizeUser == itemFound.tamaño[0] && marcoUser == itemFound.enmarcado[2]) {
+                precioFinalProducto = itemFound.precio[2]
+            }
+            if (sizeUser == itemFound.tamaño[1] && marcoUser == itemFound.enmarcado[0]) {
+                precioFinalProducto = itemFound.precio[3]
+            }
+            if (sizeUser == itemFound.tamaño[1] && marcoUser == itemFound.enmarcado[1]) {
+                precioFinalProducto = itemFound.precio[4]
+            }
+            if (sizeUser == itemFound.tamaño[1] && marcoUser == itemFound.enmarcado[2]) {
+                precioFinalProducto = itemFound.precio[5]
+            }
+            if (sizeUser == itemFound.tamaño[2] && marcoUser == itemFound.enmarcado[0]) {
+                precioFinalProducto = itemFound.precio[6]
+            }
+            if (sizeUser == itemFound.tamaño[2] && marcoUser == itemFound.enmarcado[1]) {
+                precioFinalProducto = itemFound.precio[7]
+            }
+            if (sizeUser == itemFound.tamaño[2] && marcoUser == itemFound.enmarcado[2]) {
+                precioFinalProducto = itemFound.precio[8]
+            }
+            console.log(precioFinalProducto)
+            //
+            cart.push({...itemFound, cantidad: 1, precioElegido: precioFinalProducto})
+            const {nombre, enStock} = itemFound
+            console.log(itemFound.precioElegido)
+            console.log(`El producto ${nombre} tiene ${enStock} unidades en stock`)
+        }
+        console.log(cart)
+        
+            
+        updateCart()
+        //contarProductos()
+        })
 }
 
 //UPDATE CART
 function updateCart(){
-    //showCartItems()
+    showCartItems()
     localStorage.setItem('cart', JSON.stringify(cart)) //actualizar el localstorage
     /* const vaciarCarrito = document.querySelector('.btn--vaciar--carrito')
     vaciarCarrito.addEventListener('click', function(e){
@@ -235,12 +315,47 @@ function showCartItems(){
                     <p>${item.cantidad}</p>
                 </div>
                 <div class="cart-item__price-box">
-                    <p>$${(item.precio * item.cantidad).toLocaleString()}</p>
+                    <p>$${(item.precioElegido * item.cantidad).toLocaleString()}</p>
                 </div>
                 <div class="cart-item__remove">
-                    <button class="btn--quitar--producto" onclick="removeItemFromCart(${item.id})" >Quitar producto</button>
+                    <button class="btn--quitar--producto" onclick="removeItemFromCart(${item.id}, ${item.precioElegido})" >Quitar producto</button>
                 </div>
             </div>
             `
 })
+}
+
+//BORRAR CARRITO
+function borrarCarrito(){
+    cart = cart.filter((item) => item.cantidad !== 0)
+    for (const obj of fotoProductos) {
+        if (obj.cantidad !== 0) {
+            obj.cantidad = 0;
+            break;
+        }
+    }
+    
+    for (const obj of cart) {
+        if (obj.cantidad !== 0) {
+            obj.cantidad = 0;
+        }
+    }
+    /*
+    const cardVacio = ` 
+    `
+    const cardVacio2 = `
+        <div>
+            <h1>No hay productos en el carrito</h1>
+        </div>
+    `
+    divCarritoProductos.innerHTML = cardVacio2
+    divTotalProductos.innerHTML = cardVacio
+    */
+    localStorage.removeItem('cart')
+}
+
+// REMOVE ITEM FROM CART
+function removeItemFromCart(id, precio){
+    cart = cart.filter( (item) => item.id !== id && item.precio !== precio) // filtrar el array quitando el producto con el id que quiero eliminar
+    updateCart()
 }
