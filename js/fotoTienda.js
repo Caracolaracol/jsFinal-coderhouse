@@ -145,7 +145,7 @@ async function showProduct (){
 
                         // GET CORRECT INDEX FOR THE PRICE OF THE PRODUCT GIVEN A SIZE AND TYPE WITH A FOR CYCLE
                         let num = 0
-                        for(num; num < 8; num++){
+                        for(num; num < 9; num++){
                             let firstNum
                             let secondNum = 0
                             if (num == 0 || num == 1 || num == 2) {
@@ -155,16 +155,20 @@ async function showProduct (){
                             } else if (num == 6 || num == 7 || num == 8){
                                 firstNum = 2
                             }
-                            if (num > 2 && num < 5) {
+                            if (num == 3 || num == 4 || num == 5) {
                                 secondNum = 3
-                            } else if (num > 5) {
+                            } else if (num == 6 || num == 7 || num == 8) {
                                 secondNum = 6
                             }
-                            
+                            console.log(num)
+                            console.log(firstNum)
+                            console.log(secondNum)
                             if (sizeUser == productoEncontrado.tamaño[firstNum] && marcoUser == productoEncontrado.enmarcado[num - secondNum]) {
                                 precioProducto = productoEncontrado.precio[num]
                             }
+                            
                         }
+                        
                         sectionPrice.innerHTML = `
                             <h2 class="${productoEncontrado.id}">$${precioProducto}</h2>
                         `

@@ -119,5 +119,13 @@
 }
 
 .main-section {
+    width: 65rem;
     background-color: $negro;
+    .main {
+        div {
+            h4 {
+                text-align: center;
+            }
+        }
+    }
 }

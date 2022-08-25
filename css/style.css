@@ -563,7 +563,10 @@ p {
   display: none; }
 
 .main-section {
+  width: 65rem;
   background-color: #050307; }
+  .main-section .main div h4 {
+    text-align: center; }
 
 .footer-container {
   bottom: 0;
