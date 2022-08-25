@@ -28,14 +28,17 @@ btnBackTienda.addEventListener('click', function(){
 // SHOW CART
 const verCarritoBtn = document.querySelector('#store-section__cart-btn')
 const productSections = document.querySelector('.store-section__products')
+
 verCarritoBtn.addEventListener('click', function(){
     verCarritoBtn.style.display = 'none'
     carrito.style.display = 'flex'
     carrito.style.flexDirection = 'column'
     productSections.style.display = 'none'
     btnBackTienda.style.display = 'block'
+    
+    
+    
     //
-
 })
 
 // FETCH FOTOPRODUCTOS
@@ -60,17 +63,9 @@ function showProducts(productos) {
                     <h3 class="store-section__name">${fotoProducto.nombre}</h3>
                 </div>
                 <div>
-                <!-- <p> Tamaños: ${fotoProducto.tamaño}  </p> -->
-                <!-- <p>${fotoProducto.stock} disponibles </p> -->
                 <p>desde $${fotoProducto.precio[0].toLocaleString()}</p> <!-- toLocalString para que el numero salga con punto cuando es mil -->
                 </div>
             </div>
-            
-            <!-- BTN AÑADIR AL CARRITO
-            <div class="btn--container" onclick="addToCart(${fotoProducto.id})">
-                <button class="btn" type="button">Agregar al carrito</button>
-            </div>
-            -->
         </div>
         ` 
     })
@@ -146,35 +141,30 @@ async function showProduct (){
                         const sectionPrice = document.querySelector('.apart-section__price')
                         let sizeUser = selectSize.value
                         let marcoUser = selectMarco.value
-
-                        if (sizeUser == productoEncontrado.tamaño[0] && marcoUser == productoEncontrado.enmarcado[0]) {
-                            precioProducto = productoEncontrado.precio[0]
-                        }
-                        if (sizeUser == productoEncontrado.tamaño[0] && marcoUser == productoEncontrado.enmarcado[1]) {
-                            precioProducto = productoEncontrado.precio[1]
-                        }
-                        if (sizeUser == productoEncontrado.tamaño[0] && marcoUser == productoEncontrado.enmarcado[2]) {
-                            precioProducto = productoEncontrado.precio[2]
-                        }
-                        if (sizeUser == productoEncontrado.tamaño[1] && marcoUser == productoEncontrado.enmarcado[0]) {
-                            precioProducto = productoEncontrado.precio[3]
-                        }
-                        if (sizeUser == productoEncontrado.tamaño[1] && marcoUser == productoEncontrado.enmarcado[1]) {
-                            precioProducto = productoEncontrado.precio[4]
-                        }
-                        if (sizeUser == productoEncontrado.tamaño[1] && marcoUser == productoEncontrado.enmarcado[2]) {
-                            precioProducto = productoEncontrado.precio[5]
-                        }
-                        if (sizeUser == productoEncontrado.tamaño[2] && marcoUser == productoEncontrado.enmarcado[0]) {
-                            precioProducto = productoEncontrado.precio[6]
-                        }
-                        if (sizeUser == productoEncontrado.tamaño[2] && marcoUser == productoEncontrado.enmarcado[1]) {
-                            precioProducto = productoEncontrado.precio[7]
-                        }
-                        if (sizeUser == productoEncontrado.tamaño[2] && marcoUser == productoEncontrado.enmarcado[2]) {
-                            precioProducto = productoEncontrado.precio[8]
-                        }
                         
+
+                        // GET CORRECT INDEX FOR THE PRICE OF THE PRODUCT GIVEN A SIZE AND TYPE WITH A FOR CYCLE
+                        let num = 0
+                        for(num; num < 8; num++){
+                            let firstNum
+                            let secondNum = 0
+                            if (num == 0 || num == 1 || num == 2) {
+                                firstNum = 0
+                            } else if (num == 3 || num == 4 || num == 5){
+                                firstNum = 1
+                            } else if (num == 6 || num == 7 || num == 8){
+                                firstNum = 2
+                            }
+                            if (num > 2 && num < 5) {
+                                secondNum = 3
+                            } else if (num > 5) {
+                                secondNum = 6
+                            }
+                            
+                            if (sizeUser == productoEncontrado.tamaño[firstNum] && marcoUser == productoEncontrado.enmarcado[num - secondNum]) {
+                                precioProducto = productoEncontrado.precio[num]
+                            }
+                        }
                         sectionPrice.innerHTML = `
                             <h2 class="${productoEncontrado.id}">$${precioProducto}</h2>
                         `
@@ -191,12 +181,12 @@ async function addToCart(id) {
         let arrayProducts = await productos
         if(cart.some((item) => item.id === id)) { // si el producto que quiero agregar ya existe en el carrito:
             const itemFound = arrayProducts.find((fotoProd) => fotoProd.id == id) // find para saber que producto le corresponde el id, osea que fotoProd.id sea igual a lo que dice idBoton
-            //
+            
+            // GET VALUE OF PROPERTY precioElegido
             const selectSize = document.getElementById('size')
             const selectMarco = document.getElementById('marco')
             let sizeUser = selectSize.value
             let marcoUser = selectMarco.value
-            
             let precioFinalProducto
             if (sizeUser == itemFound.tamaño[0] && marcoUser == itemFound.enmarcado[0]) {
                 precioFinalProducto = itemFound.precio[0]
@@ -234,7 +224,8 @@ async function addToCart(id) {
             console.log(`El producto ${nombre} tiene ${enStock} unidades en stock`)
         } else {
             const itemFound = arrayProducts.find((producto) => producto.id === id )
-            //
+
+            // GET VALUE OF THE PROPERTY precioElegido BEFORE PUSHING PRODUCT TO THE CART
             const selectSize = document.getElementById('size')
             const selectMarco = document.getElementById('marco')
             let sizeUser = selectSize.value
@@ -272,13 +263,37 @@ async function addToCart(id) {
             //
             cart.push({...itemFound, cantidad: 1, precioElegido: precioFinalProducto})
             const {nombre, enStock} = itemFound
-            console.log(itemFound.precioElegido)
             console.log(`El producto ${nombre} tiene ${enStock} unidades en stock`)
         }
         console.log(cart)
         
-            
+        
         updateCart()
+        alertCompra()
+        Toastify({
+            text: "Producto agregado al carrito 🛒 ",
+            duration: 3000,
+            //destination: "https://github.com/apvarun/toastify-js",
+            newWindow: false,
+            close: false,
+            gravity: "top", // `top` or `bottom`
+            position: "right", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+            display: "inline-block",
+            background: "linear-gradient(to top, rgba(5, 5, 5, 1.0), rgba(30, 18, 71, 0.7))",
+            position: "fixed",
+            padding: "12px 20px",
+            transition: "all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1)",
+            animation : "aparecer 250ms ease-in",
+            left : "88%",
+            zIndex : "99",
+            borderRadius: "8px",
+            backdropFilter: "blur(8.9px)"
+            /* Created with https://www.css-gradient.com */
+            },
+            onClick: function(){} // Callback after click
+        }).showToast();
         //contarProductos()
         })
 }
@@ -301,12 +316,43 @@ function updateCart(){
 
 // MOSTRAR ITEMS AL GRID CARRITO
 const cartItems = document.querySelector('.cart__products')
+const cartTotal = document.querySelector('.cart__total')
 function showCartItems(){
+    cartItems.innerHTML = ` `
+    cartTotal.innerHTML = `
+    <div id="c">
+        <div id="c1">
+        
+        </div>
+        <div id="c2">
+            
+        </div>
+        <div id="c3">
+            <h2>
+                Total:
+            </h2>
+        </div>
+        <div id="c4">
+            <h2>
+                $${totalCarrito().toLocaleString()}
+            </h2>
+        </div>
+        <div id="vaciar--carrito">
+            <button class="btn btn--vaciar--carrito">Vaciar carrito</button>
+        </div>
+        <div id="realizar--compra">
+            <button class="btn btn--realizar--compra">Realizar compra</button>
+        </div>
+    </div>
+    `
     cart.forEach((item) => {
-        cartItems.innerHTML += `
+        if (item.cantidad == 0){
+            cartItems.innerHTML = ` `
+        } else {
+            cartItems.innerHTML += `
             <div class="cart-item">
                 <div class="cart-item__image-box">
-                    <img src=${item.imagen} class="imagen--carrito" alt="">
+                    <img src="../images/${item.imagen}" class="imagen--carrito" alt="">
                 </div>
                 <div class="cart-item__name-box">
                     <h3 class="nombre--producto">${item.nombre}</h3>
@@ -318,17 +364,26 @@ function showCartItems(){
                     <p>$${(item.precioElegido * item.cantidad).toLocaleString()}</p>
                 </div>
                 <div class="cart-item__remove">
-                    <button class="btn--quitar--producto" onclick="removeItemFromCart(${item.id}, ${item.precioElegido})" >Quitar producto</button>
+                    <button class="btn btn--quitar--producto" onclick="removeItemFromCart(${item.id}, ${item.precioElegido})" >Quitar producto</button>
                 </div>
             </div>
             `
-})
+        }
+        
+    })
+    const vaciarCarritoBtn = document.querySelector('.btn--vaciar--carrito')
+    vaciarCarritoBtn.addEventListener('click', function(e){
+        e.preventDefault
+        borrarCarrito()
+    })
 }
 
 //BORRAR CARRITO
-function borrarCarrito(){
+async function borrarCarrito(){
+    fetch('../json/fotoProductos.json').then(response => response.json()).then(async productos => {
+    let arrayProducts = await productos
     cart = cart.filter((item) => item.cantidad !== 0)
-    for (const obj of fotoProductos) {
+    for (const obj of arrayProducts) {
         if (obj.cantidad !== 0) {
             obj.cantidad = 0;
             break;
@@ -340,17 +395,14 @@ function borrarCarrito(){
             obj.cantidad = 0;
         }
     }
-    /*
-    const cardVacio = ` 
-    `
-    const cardVacio2 = `
+
+    cartTotal.innerHTML = ` `
+    cartItems.innerHTML = `
         <div>
             <h1>No hay productos en el carrito</h1>
         </div>
     `
-    divCarritoProductos.innerHTML = cardVacio2
-    divTotalProductos.innerHTML = cardVacio
-    */
+    })
     localStorage.removeItem('cart')
 }
 
@@ -358,4 +410,24 @@ function borrarCarrito(){
 function removeItemFromCart(id, precio){
     cart = cart.filter( (item) => item.id !== id && item.precio !== precio) // filtrar el array quitando el producto con el id que quiero eliminar
     updateCart()
+}
+
+// GET TOTAL CART PRICE
+function totalCarrito(){ // funcion para que de el total del carrito
+    return cart.reduce((acumulador, fotoProd) => acumulador + fotoProd.precioElegido * fotoProd.cantidad, 0) //recurrer el producto. acumulador + el precio del producto multiplicado por la cantidad (la cantidad propiedad ya va a estar creada)
+}
+
+// BUY ALERT
+function alertCompra() {
+    const btnComprar = document.querySelector('.btn--realizar--compra')
+    btnComprar.addEventListener('click', () => {
+        Swal.fire({
+            title: 'Compra realizada',
+            text:'Gracias por su compra',
+            confirmButtonText: 'Save',
+            background: 'rgba(54, 36, 113, 0.8)'
+            })
+        borrarCarrito()
+        //contarProductos()
+    })
 }

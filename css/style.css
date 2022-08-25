@@ -57,6 +57,203 @@ p {
   font-size: 16px !important;
   margin: 3px; }
 
+.main-section {
+  margin-left: 20rem;
+  margin-top: 4rem; }
+
+#main-title {
+  margin-bottom: 2rem; }
+  #main-title h1 {
+    font-family: 'pkmnfont'; }
+
+#form--name {
+  display: block; }
+
+#nombre--usuario h3 {
+  font-family: 'pkmnfont';
+  font-size: 13px; }
+
+.main-subtitle {
+  display: none;
+  margin-bottom: 2rem;
+  justify-content: space-evenly; }
+
+#nombre--usuario {
+  margin-bottom: 1rem;
+  width: 16rem;
+  text-align: center; }
+
+.no-btn {
+  background-color: #07000a;
+  border: none;
+  border-radius: 7px;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 14px;
+  margin: 4px 2px;
+  opacity: 0.8;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none; }
+
+.btn--curar {
+  margin-left: 3rem; }
+
+#div-btn-poke {
+  display: none; }
+
+#btn--poke {
+  display: block; }
+
+.btn--poke {
+  margin-left: 14rem;
+  margin-bottom: 2rem; }
+
+#p1--invalido {
+  display: none; }
+
+#main-div {
+  display: none;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1em 1em;
+  grid-template-areas: "f1 f2 f3" "f4 f5 f6";
+  width: 60rem;
+  height: 20rem;
+  background-color: #07000a;
+  border-radius: 4px;
+  border: 3px;
+  border-style: solid;
+  border-color: #080011;
+  box-shadow: 0px 0px 5px 4px rgba(6, 1, 18, 0.2);
+  text-align: center;
+  margin-right: 4rem; }
+
+#input--hidden {
+  display: none; }
+
+#form--nombrar {
+  display: none; }
+
+#form--poke {
+  display: block; }
+
+#div--hp {
+  display: none; }
+
+#abrir--hp {
+  height: 5rem;
+  padding: 4rem; }
+
+#form--hp {
+  display: none; }
+
+#div--gracias {
+  display: none; }
+
+#btn--pagar {
+  display: none; }
+
+#div--id {
+  display: none; }
+
+#div-final {
+  display: none;
+  width: 60rem; }
+
+/* -----------show forms ----------- */
+.input--poke1 {
+  display: none; }
+
+.input--poke2 {
+  display: none; }
+
+.input--poke3 {
+  display: none; }
+
+.input--poke4 {
+  display: none; }
+
+.input--poke5 {
+  display: none; }
+
+.input--poke6 {
+  display: none; }
+
+.input2--poke1 {
+  display: none; }
+
+.input2--poke2 {
+  display: none; }
+
+.input2--poke3 {
+  display: none; }
+
+.input2--poke4 {
+  display: none; }
+
+.input2--poke5 {
+  display: none; }
+
+.input2--poke6 {
+  display: none; }
+
+.input3--poke1 {
+  display: none; }
+
+.input3--poke2 {
+  display: none; }
+
+.input3--poke3 {
+  display: none; }
+
+.input3--poke4 {
+  display: none; }
+
+.input3--poke5 {
+  display: none; }
+
+.input3--poke6 {
+  display: none; }
+
+/* ------------grid cards-------------- */
+.card--1 {
+  grid-area: f1; }
+
+.card--2 {
+  grid-area: f2; }
+
+.card--3 {
+  grid-area: f3; }
+
+.card--4 {
+  grid-area: f4; }
+
+.card--5 {
+  grid-area: f5; }
+
+.card--6 {
+  grid-area: f6; }
+
+.card--7 {
+  grid-area: f7; }
+
+.card--8 {
+  grid-area: f8; }
+
+.card--9 {
+  grid-area: f9; }
+
+.card--10 {
+  grid-area: f10; }
+
+.card--11 {
+  grid-area: f11; }
+
+.card--12 {
+  grid-area: f12; }
+
 .store-section {
   display: grid;
   grid-template-columns: .7fr 1.3fr 1.3fr .7fr;
@@ -191,7 +388,9 @@ p {
           .store-section .store-section__products .apart-section .apart-section__card .apart-section__container-data form .apart-section__onclick {
             padding: 4px; }
   .store-section .store-section__cart {
-    display: none; }
+    display: none;
+    grid-area: store-section__products;
+    padding-top: 6rem; }
     .store-section .store-section__cart .cart-title {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -205,7 +404,7 @@ p {
         grid-area: t3; }
       .store-section .store-section__cart .cart-title .cart-title__precio {
         grid-area: t4; }
-    .store-section .store-section__cart .cart-products .cart-products__product {
+    .store-section .store-section__cart .cart__products .cart-item {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr;
       grid-template-rows: 1fr;
@@ -216,21 +415,46 @@ p {
       border-radius: 6px;
       align-items: center;
       background-color: rgba(38, 24, 82, 0.2); }
-      .store-section .store-section__cart .cart-products .cart-products__product .cart-products__imagen {
-        grid-area: f1; }
-      .store-section .store-section__cart .cart-products .cart-products__product img {
-        display: flex;
-        align-items: center; }
-      .store-section .store-section__cart .cart-products .cart-products__product .cart-products__nombre {
+      .store-section .store-section__cart .cart__products .cart-item .cart-item__image-box {
+        grid-area: f1;
+        width: 6rem; }
+        .store-section .store-section__cart .cart__products .cart-item .cart-item__image-box .imagen--carrito {
+          display: flex;
+          align-items: center;
+          width: 6rem; }
+      .store-section .store-section__cart .cart__products .cart-item .cart-item__name-box {
         grid-area: f2; }
-      .store-section .store-section__cart .cart-products .cart-products__product .cart-products__cantidad {
+      .store-section .store-section__cart .cart__products .cart-item .cart-item__quantity-box {
         grid-area: f3;
         text-align: center; }
-      .store-section .store-section__cart .cart-products .cart-products__product .cart-products__precio {
+      .store-section .store-section__cart .cart__products .cart-item .cart-item__price-box {
         grid-area: f4;
         text-align: center; }
-      .store-section .store-section__cart .cart-products .cart-products__product .cart-products__remove {
+      .store-section .store-section__cart .cart__products .cart-item .cart-item__remove {
         grid-area: f5; }
+    .store-section .store-section__cart .cart__total #c {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr;
+      gap: 1em 1em;
+      grid-template-areas: "c1 c2 c3 c4 c5 c6";
+      gap: 2rem;
+      width: 100%;
+      justify-items: center;
+      align-items: center;
+      background-color: rgba(21, 13, 47, 0.2); }
+      .store-section .store-section__cart .cart__total #c #c1 {
+        grid-area: c1; }
+      .store-section .store-section__cart .cart__total #c #c2 {
+        grid-area: c2; }
+      .store-section .store-section__cart .cart__total #c #c3 {
+        grid-area: c3; }
+      .store-section .store-section__cart .cart__total #c #c4 {
+        grid-area: c4; }
+      .store-section .store-section__cart .cart__total #c #vaciar--carrito {
+        grid-area: c5; }
+      .store-section .store-section__cart .cart__total #c #realizar--compra {
+        grid-area: c6; }
   .store-section .store-section__empty {
     display: block; }
 

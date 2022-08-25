@@ -10,30 +10,202 @@
 <body>
     <div id="root">
         <!-- HEADER -->
-        <header class="header">
-            <a href="../index.html" class="link header__link"><img src="../images/logo1.png" class="logo"></a>
-        </header>
+        <div class="header-container">
+            <header class="header">
+                <a href="../index.html" class="link header__link"><img src="../images/logo1.png" class="logo"></a>
+            </header>
+        </div>
 
         <!-- NAV BAR -->
-        <nav class="main-nav">
-            <h2 class="main-nav__title1">Web development projects</h2>
-            <div class="main-nav___section1">
-                <ul class="main-nav__list">
-                    <li class="main-nav__item">
-                        <a href="../pages/fotoTienda.html" class="link main-nav__link">Tienda de Fotoproductos</a>
-                    </li>
-                    <li class="main-nav__item">
-                        <a href="../pages/centroPoke.html" class="link main-nav__link">Centro Pokemon Privatizado</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+        <div class="nav-container">
+            <nav class="main-nav">
+                <h2 class="main-nav__title1">Web development projects</h2>
+                <div class="main-nav___section1">
+                    <ul class="main-nav__list">
+                        <li class="main-nav__item">
+                            <a href="../pages/fotoTienda.html" class="link main-nav__link">Tienda de Fotoproductos</a>
+                        </li>
+                        <li class="main-nav__item">
+                            <a href="../pages/centroPoke.html" class="link main-nav__link">Centro Pokemon Privatizado</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
 
         <!-- MAIN SECTION -->
         <div class="main-section">
             <!-- MAIN -->
-            <main class="main">
-
+            <main>
+                <div id="main-title">
+                    <h1>Simulador de Centro Pokemon privatizado</h1>
+                </div>
+                <form id="form--name">
+                    <label for="ask--name"><div class="no-btn">Hola!, bienvenido a mi pagina, ¿como te llamas?</div></label>
+                    <input type="text" id="ask--name">
+                    <button id="btn--name" type="submit">click</button>
+                </form>
+                
+                <div class="main-subtitle">   
+                    <div id="nombre--usuario">
+                    </div>
+                    <div id="div--btn">
+                        <button class="btn btn--curar">
+                            ✚ Curar tus pokemon! ✚
+                        </button>
+                    </div>
+                </div>
+                <div id="div-btn-poke">
+                    <p>Se privatizó el centro pokemon, ahora curar a tus pokemón tiene un costo! (10 dolares por pokemon, 2 dolares por HP recuperado)</p>
+                    <button id="btn--poke" class="btn btn--poke">
+                        ✚ déjame agregar aquí tus pokemon a la sala de curación ✚
+                    </button> 
+                </div>
+                <div id="input--hidden">  
+                    <div>
+                        <form id="form--poke">
+                            <label for="inputNumber">Ingrese cuántos pokemones tienes</label>
+                            <input type="text" id="inputNumber">
+                            <button id="btn--number" type="submit">click</button>
+                        </form>
+                        <div id="p1--invalido">
+                            <p>Número invalido! recuerda que debieras portar entre 1 a 6 pokemones.</p>
+                        </div>
+                    </div>
+                    <div id="form--nombrar">
+                        <form id="form--nombrar--pokes">
+                            <label class="input--poke1" for="poke1">Ingrese cual es tu primer POKEMON(tal vez un Pikachu? un Eevee? o cualquier otro 🥰 ), se le asignará una id de paciente, debes recordarla para después retirar a tu pokemón!</label>
+                            <select class="input--poke1" id="select__Poke1" name="poke1"></select>
+                            <!--- <input class="input--poke1" type="text" id="poke1" name="fname" required> -->
+                            <label class="input--poke1" for="nivelPoke1">ingrese el NIVEL del pokemon</label>
+                            <input class="input--poke1" type="text" id="nivelPoke1" name="fname">
+        
+        
+                            <label class="input--poke2" for="poke2">Ingrese cual es tu segundo POKEMON</label>
+                            <select class="input--poke2" id="select__Poke2" name="poke2"></select>
+                            <!--<input class="input--poke2" type="text" id="poke2" name="fname">-->
+                            <label class="input--poke2" for="nivelPoke2">ingrese el NIVEL del pokemon</label>
+                            <input class="input--poke2" type="text" id="nivelPoke2" name="fname">
+        
+        
+                            <label class="input--poke3" for="poke3">Ingrese cual es tu tercer POKEMON</label>
+                            <select class="input--poke3" id="select__Poke3" name="poke3"></select>
+                            <!--<input class="input--poke3" type="text" id="poke3" name="fname">-->
+                            <label class="input--poke3" for="nivelPoke3">ingrese el NIVEL del pokemon</label>
+                            <input class="input--poke3" type="text" id="nivelPoke3" name="fname">
+        
+        
+                            <label class="input--poke4" for="Poke4">Ingrese cual es tu cuarto POKEMON</label>
+                            <select class="input--poke4" id="select__Poke4" name="poke4"></select>
+                            <!--<input class="input--poke4" type="text" id="poke4" name="fname">-->
+                            <label class="input--poke4" for="nivelPoke4">ingrese el NIVEL del pokemon</label>
+                            <input class="input--poke4" type="text" id="nivelPoke4" name="fname">
+        
+        
+                            <label class="input--poke5" for="Poke5">Ingrese cual es tu quinto POKEMON</label>
+                            <select class="input--poke5" id="select__Poke5" name="poke5"></select>
+                            <!--<input class="input--poke5" type="text" id="poke5" name="fname">-->
+                            <label class="input--poke5" for="nivelPoke5">ingrese el NIVEL del pokemon</label>
+                            <input class="input--poke5" type="text" id="nivelPoke5" name="fname">
+        
+        
+                            <label class="input--poke6" for="Poke6">Ingrese cual es tu sexto POKEMON</label>
+                            <select class="input--poke6" id="select__Poke6" name="poke6"></select>
+                            <!--<input class="input--poke6" type="text" id="poke6" name="fname">-->
+                            <label class="input--poke6" for="nivelPoke6">ingrese el NIVEL del pokemon</label>
+                            <input class="input--poke6" type="text" id="nivelPoke6" name="fname">
+        
+                            <button id="btn--nombrar" type="submit">Enviar nombres</button>
+                        </form>
+        
+                        
+                    </div>
+        
+                    <!-- Form para ingresar HP faltantes y asignacion de ID de paciente-->
+                    <div id="div--hp">
+                        <button id="abrir--hp" class="btn btn--poke">
+                            ✚ Ahora ingrese cuánto HP le falta a cada pokemón ✚
+                        </button>
+                    </div>
+                    <div id="form--hp">
+                        <form id="form--hp--pokes">
+                            <label class="input2--poke1" for="hp--poke1"></label>
+                            <input class="input2 input2--poke1" type="text" id="hp--poke1">
+                                <p id="hp--poke1--p"></p>
+        
+                            <label class="input2--poke2" for="hp--poke2"></label>
+                            <input class="input2 input2--poke2" type="text" id="hp--poke2">
+                                <p id="hp--poke2--p"></p>
+        
+                            <label class="input2--poke3" for="hp--poke3"></label>
+                            <input class="input2 input2--poke3" type="text" id="hp--poke3">
+                                <p id="hp--poke3--p"></p>
+        
+                            <label class="input2--poke4" for="hp--poke4"></label>
+                            <input class="input2 input2--poke4" type="text" id="hp--poke4">
+                                <p id="hp--poke4--p"></p>
+        
+                            <label class="input2--poke5" for="hp--poke5"></label>
+                            <input class="input2 input2--poke5" type="text" id="hp--poke5">
+                                <p id="hp--poke5--p"></p>
+        
+                            <label class="input2--poke6" for="hp--poke6"></label>
+                            <input class="input2 input2--poke6" type="text" id="hp--poke6">
+                                <p id="hp--poke6--p"></p>   
+        
+                            <button id="btn--hp" type="submit">Ingresar datos</button>
+                        </form>
+                    </div>
+                    <div id="div--costo">
+                    </div>
+                    <div id="div--gracias">
+        
+                    </div>
+                    <button class="btn" id="btn--pagar">Pagar</button>
+                    <div id="div--id">
+                        <form id="form--id">
+                            <div class="no-btn">por favor ingrese los id de tus pokemon para poder entregárselos(Este es un juego de memoria! 😺 </div>
+                            <label class="input3--poke1" for="id--poke1">poke1:</label>
+                            <input class="input3--poke1" type="text" id="id--poke1">
+                                <p id="id--poke1--p"></p>
+        
+                            <label class="input3--poke2" for="id--poke2">poke2:</label>
+                            <input class="input3--poke2" type="text" id="id--poke2">
+                                <p id="id--poke2--p"></p>
+                            
+                            <label class="input3--poke3" for="id--poke3">poke3:</label>
+                            <input class="input3--poke3" type="text" id="id--poke3">
+                                <p id="id--poke3--p"></p>
+                            
+                            <label class="input3--poke4" for="id--poke4">poke4:</label>
+                            <input class="input3--poke4" type="text" id="id--poke4">
+                                <p id="id--poke4--p"></p>
+                            
+                            <label class="input3--poke5" for="id--poke5">poke5</label>
+                            <input class="input3--poke5" type="text" id="id--poke5">
+                                <p id="id--poke5--p"></p>
+                            
+                            <label class="input3--poke6" for="id--poke6">poke6</label>
+                            <input class="input3--poke6" type="text" id="id--poke6">
+                                <p id="id--poke6--p"></p>
+                            
+                            <button id="btn--id" type="submit">Ingresar IDs</button>
+                        </form>
+                        
+                    </div>
+                    <div id="div-final" class="no-btn">
+        
+                    </div>
+                </div>
+                
+                <div id="main-div">
+                    <div class="card card--1"><p>Pokemon 1</p></div>
+                    <div class="card card--2"><p>Pokemon 2</p></div>
+                    <div class="card card--3"><p>Pokemon 3</p></div>
+                    <div class="card card--4"><p>Pokemon 4</p></div>
+                    <div class="card card--5"><p>Pokemon 5</p></div>
+                    <div class="card card--6"><p>Pokemon 6</p></div>
+                </div>
             </main>
 
             <!-- EMPTY SECTION -->
@@ -43,13 +215,17 @@
         </div>
         
         <!-- FOOTER -->
-        <footer class="footer">
-            <div class="footer__section">
-                <p class="footer__text">Sitio creado por Agustin Rojas | Caracol 🐌 </p>
-            </div>
-            <div class="footer__section">
-                <p class="footer__text">2022 ® Caracolaracol 🐌</p>
-            </div>
-        </footer>
+        <div class="footer-container">
+            <footer class="footer">
+                <div class="footer__section">
+                    <p class="footer__text">Sitio creado por Agustin Rojas | Caracol 🐌 </p>
+                </div>
+                <div class="footer__section">
+                    <p class="footer__text">2022 ® Caracolaracol 🐌</p>
+                </div>
+            </footer>
+        </div>
+<script src="../js/centroPoke.js"></script>
 </body>
+
 </html>
