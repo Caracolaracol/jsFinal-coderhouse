@@ -2,6 +2,8 @@ const productosContainer = document.querySelector('.store-section__cards')
 const btnBackTienda = document.querySelector('.store-section__back-btn')
 const carrito = document.querySelector('.store-section__cart')
 
+const cartItems = document.querySelector('.cart__products')
+const cartTotal = document.querySelector('.cart__total')
 // localStorage
 let cart
 if(JSON.parse(localStorage.getItem('cart'))) { // si existe la clave carrito en el storage
@@ -12,7 +14,7 @@ if(JSON.parse(localStorage.getItem('cart'))) { // si existe la clave carrito en 
 }
 
 pedirProductos()
-
+updateCart()
 // GO BACK TO THE STORE
 btnBackTienda.addEventListener('click', function(){
     const apartSection = document.querySelector('.apart-section')
@@ -144,27 +146,27 @@ async function showProduct (){
                         
 
                         // GET CORRECT INDEX FOR THE PRICE OF THE PRODUCT GIVEN A SIZE AND TYPE WITH A FOR CYCLE
-                        let num = 0
-                        for(num; num < 9; num++){
-                            let firstNum
-                            let secondNum = 0
-                            if (num == 0 || num == 1 || num == 2) {
-                                firstNum = 0
-                            } else if (num == 3 || num == 4 || num == 5){
-                                firstNum = 1
-                            } else if (num == 6 || num == 7 || num == 8){
-                                firstNum = 2
+                        let x = 0
+                        for(x; x < 9; x++){
+                            let a
+                            let b = 0
+                            if (x == 0 || x == 1 || x == 2) {
+                                a = 0
+                            } else if (x == 3 || x == 4 || x == 5){
+                                a = 1
+                            } else if (x == 6 || x == 7 || x == 8){
+                                a = 2
                             }
-                            if (num == 3 || num == 4 || num == 5) {
-                                secondNum = 3
-                            } else if (num == 6 || num == 7 || num == 8) {
-                                secondNum = 6
+                            if (x == 3 || x == 4 || x == 5) {
+                                b = 3
+                            } else if (x == 6 || x == 7 || x == 8) {
+                                b = 6
                             }
-                            console.log(num)
-                            console.log(firstNum)
-                            console.log(secondNum)
-                            if (sizeUser == productoEncontrado.tamaño[firstNum] && marcoUser == productoEncontrado.enmarcado[num - secondNum]) {
-                                precioProducto = productoEncontrado.precio[num]
+                            console.log(x)
+                            console.log(a)
+                            console.log(b)
+                            if (sizeUser == productoEncontrado.tamaño[a] && marcoUser == productoEncontrado.enmarcado[x - b]) {
+                                precioProducto = productoEncontrado.precio[x]
                             }
                             
                         }
@@ -184,7 +186,7 @@ async function addToCart(id) {
     fetch('../json/fotoProductos.json').then(response => response.json()).then(async productos => {
         let arrayProducts = await productos
         if(cart.some((item) => item.id === id)) { // si el producto que quiero agregar ya existe en el carrito:
-            const itemFound = arrayProducts.find((fotoProd) => fotoProd.id == id) // find para saber que producto le corresponde el id, osea que fotoProd.id sea igual a lo que dice idBoton
+            const itemFound = arrayProducts.find((fotoProd) => fotoProd.id == id) // find para saber que producto le corresponde el id, osea que fotoProd.id sea igual a lo que dice el id del button
             
             // GET VALUE OF PROPERTY precioElegido
             const selectSize = document.getElementById('size')
@@ -219,13 +221,32 @@ async function addToCart(id) {
             if (sizeUser == itemFound.tamaño[2] && marcoUser == itemFound.enmarcado[2]) {
                 precioFinalProducto = itemFound.precio[8]
             }
-            console.log(precioFinalProducto)
+            const enCarrito = cart.find((fotoProd) => fotoProd.id == itemFound.id) //primer producto en el carrito que encuentra con el mismo id
+
+
             //
-            const enCarrito = cart.find((fotoProd) => fotoProd.id == itemFound.id)
+            const enCarritoMulti = cart.filter((fotoProd) => fotoProd.id == itemFound.id) // array de los productos con el mismo id, que ya están en el carrito
+            console.log(enCarritoMulti)
+            
+            //
+            console.log(enCarrito)
             const carritoFiltrado = cart.filter(fotoProd => fotoProd.id != enCarrito.id) // filtrado de productos para traer los productos que no están en el carrito.
-            cart = [...carritoFiltrado, {...enCarrito, cantidad: enCarrito.cantidad + 1}] //agregar todos los productos(propiedad por propiedad) menos el que yo encontré en el carrito. agregar la cantidad que yo tenía en el carrito del producto +
-            const {nombre, enStock} = itemFound
-            console.log(`El producto ${nombre} tiene ${enStock} unidades en stock`)
+            console.log(carritoFiltrado)
+
+            //
+            // TEST CODE, FUNCI´¿ONA MIERDAAA
+            // si el precioElegido del producto que quiero agregar es distinto al precioElegido del mismo producto que ya está en el carrito entonces pushéalo como otro producto.
+            if (precioFinalProducto !== enCarrito.precioElegido || sizeUser !== enCarrito.sizeChosen || marcoUser !== enCarrito.marcoChosen){
+                cart.push({...itemFound, cantidad: 1, precioElegido: precioFinalProducto, sizeChosen: sizeUser, marcoChosen: marcoUser})
+            } else {
+                enCarritoMulti.splice(0,1) // quitar el producto al que a continuacion añadiré con su cantidad en +1
+                cart = [...carritoFiltrado, ...enCarritoMulti, {...enCarrito, cantidad: enCarrito.cantidad + 1}] //agregar todos los productos(propiedad por propiedad) menos el que yo encontré en el carrito. agregar la cantidad que yo tenía en el carrito del producto +
+                const {nombre, enStock} = itemFound
+                console.log(`El producto ${nombre} tiene ${enStock} unidades en stock`)
+            }
+            //
+            //
+            //
         } else {
             const itemFound = arrayProducts.find((producto) => producto.id === id )
 
@@ -265,7 +286,7 @@ async function addToCart(id) {
             }
             console.log(precioFinalProducto)
             //
-            cart.push({...itemFound, cantidad: 1, precioElegido: precioFinalProducto})
+            cart.push({...itemFound, cantidad: 1, precioElegido: precioFinalProducto, sizeChosen: sizeUser, marcoChosen: marcoUser})
             const {nombre, enStock} = itemFound
             console.log(`El producto ${nombre} tiene ${enStock} unidades en stock`)
         }
@@ -306,80 +327,89 @@ async function addToCart(id) {
 function updateCart(){
     showCartItems()
     localStorage.setItem('cart', JSON.stringify(cart)) //actualizar el localstorage
-    /* const vaciarCarrito = document.querySelector('.btn--vaciar--carrito')
+    const vaciarCarrito = document.querySelector('.btn--vaciar--carrito')
     vaciarCarrito.addEventListener('click', function(e){
         e.preventDefault
-        contador = 0
-        contadorProductos.innerHTML = `
-                <p>${contador}</p>
-                `
+        //contador = 0
+        //contadorProductos.innerHTML = `
+        //        <p>${contador}</p>
+        //        `
         borrarCarrito()
-        contarProductos()
-    }) */
+        //contarProductos()
+    }) 
 }
 
 // MOSTRAR ITEMS AL GRID CARRITO
-const cartItems = document.querySelector('.cart__products')
-const cartTotal = document.querySelector('.cart__total')
+
 function showCartItems(){
+    console.log(cart)
     cartItems.innerHTML = ` `
-    cartTotal.innerHTML = `
-    <div id="c">
-        <div id="c1">
-        
+    if(cart.length == 0) {
+        cartItems.innerHTML = `
+        <div>
+            <h1>No hay productos en el carrito</h1>
         </div>
-        <div id="c2">
-            
-        </div>
-        <div id="c3">
-            <h2>
-                Total:
-            </h2>
-        </div>
-        <div id="c4">
-            <h2>
-                $${totalCarrito().toLocaleString()}
-            </h2>
-        </div>
-        <div id="vaciar--carrito">
-            <button class="btn btn--vaciar--carrito">Vaciar carrito</button>
-        </div>
-        <div id="realizar--compra">
-            <button class="btn btn--realizar--compra">Realizar compra</button>
-        </div>
-    </div>
     `
-    cart.forEach((item) => {
-        if (item.cantidad == 0){
-            cartItems.innerHTML = ` `
-        } else {
-            cartItems.innerHTML += `
-            <div class="cart-item">
-                <div class="cart-item__image-box">
-                    <img src="../images/${item.imagen}" class="imagen--carrito" alt="">
+        cartTotal.innerHTML = ` `
+    } else {    
+        cartTotal.innerHTML = `
+            <div id="c">
+                <div id="c1">
+                
                 </div>
-                <div class="cart-item__name-box">
-                    <h3 class="nombre--producto">${item.nombre}</h3>
+                <div id="c2">
+                    
                 </div>
-                <div class="cart-item__quantity-box">
-                    <p>${item.cantidad}</p>
+                <div id="c3">
+                    <h2>
+                        Total:
+                    </h2>
                 </div>
-                <div class="cart-item__price-box">
-                    <p>$${(item.precioElegido * item.cantidad).toLocaleString()}</p>
+                <div id="c4">
+                    <h2>
+                        $${totalCarrito().toLocaleString()}
+                    </h2>
                 </div>
-                <div class="cart-item__remove">
-                    <button class="btn btn--quitar--producto" onclick="removeItemFromCart(${item.id}, ${item.precioElegido})" >Quitar producto</button>
+                <div id="vaciar--carrito">
+                    <button class="btn btn--vaciar--carrito">Vaciar carrito</button>
+                </div>
+                <div id="realizar--compra">
+                    <button class="btn btn--realizar--compra">Realizar compra</button>
                 </div>
             </div>
-            `
-        }
-        
-    })
-    const vaciarCarritoBtn = document.querySelector('.btn--vaciar--carrito')
-    vaciarCarritoBtn.addEventListener('click', function(e){
-        e.preventDefault
-        borrarCarrito()
-    })
+        `
+        cart.forEach((item) => {
+            if (item.cantidad == 0){
+                cartItems.innerHTML = ` `
+            } else {
+                cartItems.innerHTML += `
+                <div class="cart-item">
+                    <div class="cart-item__image-box">
+                        <img src="../images/${item.imagen}" class="imagen--carrito" alt="">
+                    </div>
+                    <div class="cart-item__name-box">
+                        <h3 class="nombre--producto">${item.nombre} (${item.sizeChosen})</h3>
+                    </div>
+                    <div class="cart-item__quantity-box">
+                        <p>${item.cantidad}</p>
+                    </div>
+                    <div class="cart-item__price-box">
+                        <p>$${(item.precioElegido * item.cantidad).toLocaleString()}</p>
+                    </div>
+                    <div class="cart-item__remove">
+                        <button class="btn btn--quitar--producto" onclick="removeItemFromCart(${item.id}, ${item.precioElegido})" >Quitar producto</button>
+                    </div>
+                </div>
+                `
+            }
+            
+        })
+        const vaciarCarritoBtn = document.querySelector('.btn--vaciar--carrito')
+        vaciarCarritoBtn.addEventListener('click', function(e){
+            e.preventDefault
+            borrarCarrito()
+        })
+    }
 }
 
 //BORRAR CARRITO
