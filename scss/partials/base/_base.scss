@@ -53,11 +53,16 @@ body {
 
 // Typography
 h1 {
-    font-size: 2rem;
+    font-size: 2rem !important;
+    margin-bottom: .5rem;
+    font-weight: 600;
 }
 h2 {
     font-weight: bold;
     line-height: normal;
+}
+h3 {
+    margin-bottom: .5rem;
 }
 p {
     font-size: 13px;

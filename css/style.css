@@ -42,11 +42,16 @@ body {
   font-weight: normal; }
 
 h1 {
-  font-size: 2rem; }
+  font-size: 2rem !important;
+  margin-bottom: .5rem;
+  font-weight: 600; }
 
 h2 {
   font-weight: bold;
   line-height: normal; }
+
+h3 {
+  margin-bottom: .5rem; }
 
 p {
   font-size: 13px;
@@ -346,7 +351,7 @@ ul {
           width: 19rem; } }
       .store-section .store-section__products .store-section__cards .store-section__card .store-section__body-card .store-section__name {
         font-family: 'ChronoType' !important;
-        font-size: 2rem; }
+        font-size: 2rem !important; }
       .store-section .store-section__products .store-section__cards .store-section__card p {
         color: rgba(181, 175, 193, 0.336); }
   .store-section .store-section__products .apart-section {
