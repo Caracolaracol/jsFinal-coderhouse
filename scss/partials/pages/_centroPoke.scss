@@ -6,7 +6,7 @@
 #main-title {
     margin-bottom: 2rem;
     h1 {
-        font-family: 'pkmnfont';
+        font-family: 'pkmnfont' !important;
     }
 }
 
@@ -16,8 +16,8 @@
 
 #nombre--usuario {
     h3 {
-        font-family: 'pkmnfont'; 
-        font-size: 13px;
+        font-family: 'pkmnfont' !important; 
+        font-size: 13px !important;
     }
 }
 .main-subtitle {

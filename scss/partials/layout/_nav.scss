@@ -13,6 +13,7 @@
     float: left;
     &__title1 {
         display: block;
+        margin-bottom: auto;
     }
     &___section1 {
         display: block;
@@ -24,8 +25,8 @@
                 display: block;
                 .main-nav__link {
                     display: block;
-                    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-                    font-size: 14px;
+                    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
+                    font-size: 14px !important;
                 }
             }
         }

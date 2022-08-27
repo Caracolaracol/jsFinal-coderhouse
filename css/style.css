@@ -3,8 +3,8 @@
   padding: 0;
   box-sizing: border-box;
   color: #b5afc1;
-  font-size: 16px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 16px !important;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
   overflow: auto; }
 
 #root {
@@ -14,7 +14,8 @@ body {
   min-height: 100vh;
   max-height: 100vh;
   position: relative;
-  background-color: #050307; }
+  background-color: #050307;
+  line-height: normal; }
 
 @font-face {
   font-family: 'pkmnfont';
@@ -43,18 +44,30 @@ body {
 h1 {
   font-size: 2rem; }
 
+h2 {
+  font-weight: bold;
+  line-height: normal; }
+
 p {
-  font-size: 13px; }
+  font-size: 13px;
+  margin-bottom: auto; }
+
+a, a:hover, a:visited, a:active {
+  color: inherit;
+  text-decoration: none; }
+
+ul {
+  padding-left: 0px; }
 
 .link {
-  text-decoration: none;
+  text-decoration: none !important;
   font-family: 'pkmnfont';
   font-size: 10px;
   letter-spacing: 2px; }
 
 .main-nav__link {
   letter-spacing: normal;
-  font-size: 16px !important;
+  font-size: 16px;
   margin: 3px; }
 
 .main-section {
@@ -64,14 +77,14 @@ p {
 #main-title {
   margin-bottom: 2rem; }
   #main-title h1 {
-    font-family: 'pkmnfont'; }
+    font-family: 'pkmnfont' !important; }
 
 #form--name {
   display: block; }
 
 #nombre--usuario h3 {
-  font-family: 'pkmnfont';
-  font-size: 13px; }
+  font-family: 'pkmnfont' !important;
+  font-size: 13px !important; }
 
 .main-subtitle {
   display: none;
@@ -266,11 +279,14 @@ p {
     justify-content: space-around;
     align-items: center;
     position: fixed;
-    top: 94px;
+    top: 95px;
     left: 16.2rem;
     width: 75%;
     background-color: #050307;
     min-height: 6rem; }
+    @media screen and (max-width: 1680px) {
+      .store-section .store-section__title {
+        top: 94px; } }
     .store-section .store-section__title .store-section__back {
       width: 12rem; }
       .store-section .store-section__title .store-section__back .store-section__back-btn {
@@ -329,7 +345,7 @@ p {
         .store-section .store-section__products .store-section__cards .store-section__card .store-section__image-container .store-section__image {
           width: 19rem; } }
       .store-section .store-section__products .store-section__cards .store-section__card .store-section__body-card .store-section__name {
-        font-family: 'ChronoType';
+        font-family: 'ChronoType' !important;
         font-size: 2rem; }
       .store-section .store-section__products .store-section__cards .store-section__card p {
         color: rgba(181, 175, 193, 0.336); }
@@ -452,9 +468,11 @@ p {
       .store-section .store-section__cart .cart__total #c #c4 {
         grid-area: c4; }
       .store-section .store-section__cart .cart__total #c #vaciar--carrito {
-        grid-area: c5; }
-      .store-section .store-section__cart .cart__total #c #realizar--compra {
         grid-area: c6; }
+        .store-section .store-section__cart .cart__total #c #vaciar--carrito .btn--vaciar--carrito {
+          width: 9.4rem; }
+      .store-section .store-section__cart .cart__total #c #realizar--compra {
+        grid-area: c5; }
   .store-section .store-section__empty {
     display: block; }
 
@@ -491,19 +509,19 @@ p {
       flex-direction: column;
       gap: .3rem; }
       .welcome-section .welcome-section__body .welcome-section__item h1 {
-        font-family: 'ChronoType';
-        font-size: 24px; }
+        font-family: 'ChronoType' !important;
+        font-size: 24px !important; }
       .welcome-section .welcome-section__body .welcome-section__item h2 {
-        font-family: 'ChronoType';
-        font-size: 15px;
-        font-weight: 900;
+        font-family: 'ChronoType' !important;
+        font-size: 15px !important;
+        font-weight: 900 !important;
         letter-spacing: 3px; }
       .welcome-section .welcome-section__body .welcome-section__item p {
-        font-family: 'ChronoType';
-        font-size: 19px;
+        font-family: 'ChronoType' !important;
+        font-size: 19px !important;
         letter-spacing: 1px; }
     .welcome-section .welcome-section__body .transition-img {
-      display: block !important;
+      display: block;
       width: 16rem; }
       .welcome-section .welcome-section__body .transition-img .round-img2 {
         position: sticky;
@@ -624,7 +642,8 @@ p {
   width: 14rem;
   float: left; }
   .main-nav__title1 {
-    display: block; }
+    display: block;
+    margin-bottom: auto; }
   .main-nav___section1 {
     display: block; }
     .main-nav___section1 .main-nav__list {
@@ -635,8 +654,8 @@ p {
         display: block; }
         .main-nav___section1 .main-nav__list .main-nav__item .main-nav__link {
           display: block;
-          font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-          font-size: 14px; }
+          font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
+          font-size: 14px !important; }
 
 .main-nav-show {
   display: none; }

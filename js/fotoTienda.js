@@ -1,11 +1,13 @@
 const productosContainer = document.querySelector('.store-section__cards')
 const btnBackTienda = document.querySelector('.store-section__back-btn')
 const carrito = document.querySelector('.store-section__cart')
-
 const cartItems = document.querySelector('.cart__products')
 const cartTotal = document.querySelector('.cart__total')
+const counter = document.querySelector('#counter')
+
 // localStorage
 let cart
+let contador = 0
 if(JSON.parse(localStorage.getItem('cart'))) { // si existe la clave carrito en el storage
     cart = JSON.parse(localStorage.getItem('cart')) // asignar dicho valor en la variable carrito
 } else { // si no existe
@@ -15,6 +17,8 @@ if(JSON.parse(localStorage.getItem('cart'))) { // si existe la clave carrito en 
 
 pedirProductos()
 updateCart()
+contarProductos()
+
 // GO BACK TO THE STORE
 btnBackTienda.addEventListener('click', function(){
     const apartSection = document.querySelector('.apart-section')
@@ -30,17 +34,12 @@ btnBackTienda.addEventListener('click', function(){
 // SHOW CART
 const verCarritoBtn = document.querySelector('#store-section__cart-btn')
 const productSections = document.querySelector('.store-section__products')
-
 verCarritoBtn.addEventListener('click', function(){
     verCarritoBtn.style.display = 'none'
     carrito.style.display = 'flex'
     carrito.style.flexDirection = 'column'
     productSections.style.display = 'none'
     btnBackTienda.style.display = 'block'
-    
-    
-    
-    //
 })
 
 // FETCH FOTOPRODUCTOS
@@ -65,13 +64,12 @@ function showProducts(productos) {
                     <h3 class="store-section__name">${fotoProducto.nombre}</h3>
                 </div>
                 <div>
-                <p>desde $${fotoProducto.precio[0].toLocaleString()}</p> <!-- toLocalString para que el numero salga con punto cuando es mil -->
+                <p>desde $${fotoProducto.precio[0].toLocaleString()}</p>
                 </div>
             </div>
         </div>
         ` 
     })
-    
 }
 
 
@@ -92,8 +90,33 @@ async function showProduct (){
                 let productoEncontrado = await productos.find((fotoProd) => fotoProd.id == this.id)
                 apartSection.innerHTML = `
                     <div class="apart-section__card">
-                        <div class="apart-section__container-image">
-                            <img class="apart-section__image" src="../images/${productoEncontrado.imagen}" alt="">
+                        <div class="apart-section__container-image" id="mycarousel">
+                            <!-- <img class="apart-section__image" src="../images/${productoEncontrado.imagen}" alt=""> -->
+                            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img class="d-block w-100" src="../images/${productoEncontrado.imagen}" alt="First slide">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img class="d-block w-100" src="../images/print3.jpg" alt="Second slide">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img class="d-block w-100" src="../images/print3.jpg" alt="Second slide">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img class="d-block w-100" src="../images/print3.jpg" alt="Second slide">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            
+                            </div>
                         </div>
                         <div class="apart-section__container-data">
                             <div class="apart-section__title">
@@ -144,7 +167,6 @@ async function showProduct (){
                         let sizeUser = selectSize.value
                         let marcoUser = selectMarco.value
                         
-
                         // GET CORRECT INDEX FOR THE PRICE OF THE PRODUCT GIVEN A SIZE AND TYPE WITH A FOR CYCLE
                         let x = 0
                         for(x; x < 9; x++){
@@ -162,15 +184,10 @@ async function showProduct (){
                             } else if (x == 6 || x == 7 || x == 8) {
                                 b = 6
                             }
-                            console.log(x)
-                            console.log(a)
-                            console.log(b)
                             if (sizeUser == productoEncontrado.tamaño[a] && marcoUser == productoEncontrado.enmarcado[x - b]) {
                                 precioProducto = productoEncontrado.precio[x]
                             }
-                            
                         }
-                        
                         sectionPrice.innerHTML = `
                             <h2 class="${productoEncontrado.id}">$${precioProducto}</h2>
                         `
@@ -222,19 +239,8 @@ async function addToCart(id) {
                 precioFinalProducto = itemFound.precio[8]
             }
             const enCarrito = cart.find((fotoProd) => fotoProd.id == itemFound.id) //primer producto en el carrito que encuentra con el mismo id
-
-
-            //
             const enCarritoMulti = cart.filter((fotoProd) => fotoProd.id == itemFound.id) // array de los productos con el mismo id, que ya están en el carrito
-            console.log(enCarritoMulti)
-            
-            //
-            console.log(enCarrito)
             const carritoFiltrado = cart.filter(fotoProd => fotoProd.id != enCarrito.id) // filtrado de productos para traer los productos que no están en el carrito.
-            console.log(carritoFiltrado)
-
-            //
-            // TEST CODE, FUNCI´¿ONA MIERDAAA
             // si el precioElegido del producto que quiero agregar es distinto al precioElegido del mismo producto que ya está en el carrito entonces pushéalo como otro producto.
             if (precioFinalProducto !== enCarrito.precioElegido || sizeUser !== enCarrito.sizeChosen || marcoUser !== enCarrito.marcoChosen){
                 cart.push({...itemFound, cantidad: 1, precioElegido: precioFinalProducto, sizeChosen: sizeUser, marcoChosen: marcoUser})
@@ -244,9 +250,6 @@ async function addToCart(id) {
                 const {nombre, enStock} = itemFound
                 console.log(`El producto ${nombre} tiene ${enStock} unidades en stock`)
             }
-            //
-            //
-            //
         } else {
             const itemFound = arrayProducts.find((producto) => producto.id === id )
 
@@ -284,15 +287,12 @@ async function addToCart(id) {
             if (sizeUser == itemFound.tamaño[2] && marcoUser == itemFound.enmarcado[2]) {
                 precioFinalProducto = itemFound.precio[8]
             }
-            console.log(precioFinalProducto)
-            //
+
             cart.push({...itemFound, cantidad: 1, precioElegido: precioFinalProducto, sizeChosen: sizeUser, marcoChosen: marcoUser})
             const {nombre, enStock} = itemFound
             console.log(`El producto ${nombre} tiene ${enStock} unidades en stock`)
         }
-        console.log(cart)
-        
-        
+
         updateCart()
         alertCompra()
         Toastify({
@@ -306,33 +306,49 @@ async function addToCart(id) {
             stopOnFocus: true, // Prevents dismissing of toast on hover
             style: {
             display: "inline-block",
-            background: "linear-gradient(to top, rgba(5, 5, 5, 1.0), rgba(30, 18, 71, 0.7))",
+            background: "linear-gradient(to top, rgba(5, 5, 5, 0.2), rgba(30, 18, 71, 0.2))",
             position: "fixed",
             padding: "12px 20px",
             transition: "all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1)",
             animation : "aparecer 250ms ease-in",
             left : "88%",
             zIndex : "99",
-            borderRadius: "8px",
+            borderRadius: "4px",
             backdropFilter: "blur(8.9px)"
             /* Created with https://www.css-gradient.com */
             },
             onClick: function(){} // Callback after click
         }).showToast();
-        //contarProductos()
+        contarProductos()
         })
 }
 
 //UPDATE CART
 function updateCart(){
     showCartItems()
+    contarProductos()
     localStorage.setItem('cart', JSON.stringify(cart)) //actualizar el localstorage
 }
 
-// MOSTRAR ITEMS AL GRID CARRITO
+// COUNTER
+function contarProductos(){
+    contador = 0
+    let c = 0
+    for (c; c < cart.length; c++){
+        contador = contador + cart[c].cantidad
+    }
+    /*
+    cart.forEach((prod) => {
+        contador = contador + prod.cantidad
+    })
+    */
+    counter.innerHTML = `
+                <p>${contador}</p>
+                `
+}
 
+// MOSTRAR ITEMS AL GRID CARRITO
 function showCartItems(){
-    console.log(cart)
     cartItems.innerHTML = ` `
     if(cart.length == 0) {
         cartItems.innerHTML = `
@@ -360,11 +376,11 @@ function showCartItems(){
                         $${totalCarrito().toLocaleString()}
                     </h2>
                 </div>
-                <div id="vaciar--carrito">
-                    <button class="btn btn--vaciar--carrito">Vaciar carrito</button>
-                </div>
                 <div id="realizar--compra">
                     <button class="btn btn--realizar--compra">Realizar compra</button>
+                </div>
+                <div id="vaciar--carrito">
+                    <button class="btn btn--vaciar--carrito">Vaciar carrito</button>
                 </div>
             </div>
         `
@@ -387,7 +403,7 @@ function showCartItems(){
                         <p>$${(item.precioElegido * item.cantidad).toLocaleString()}</p>
                     </div>
                     <div class="cart-item__remove">
-                        <button class="btn btn--quitar--producto" onclick="removeItemFromCart(${item.id}, ${item.precioElegido})" >Quitar producto</button>
+                        <button class="btn btn--quitar--producto" onclick="removeItemFromCart(${item.id}, ${item.precioElegido})">Quitar producto</button>
                     </div>
                 </div>
                 `
@@ -402,7 +418,7 @@ function showCartItems(){
     }
 }
 
-//BORRAR CARRITO
+// BORRAR CARRITO
 async function borrarCarrito(){
     fetch('../json/fotoProductos.json').then(response => response.json()).then(async productos => {
     let arrayProducts = await productos
@@ -413,13 +429,13 @@ async function borrarCarrito(){
             break;
         }
     }
-    
     for (const obj of cart) {
         if (obj.cantidad !== 0) {
             obj.cantidad = 0;
         }
     }
-
+    contarProductos()
+    cart = cart.filter((item) => item.cantidad !== 0)
     cartTotal.innerHTML = ` `
     cartItems.innerHTML = `
         <div>
@@ -427,13 +443,16 @@ async function borrarCarrito(){
         </div>
     `
     })
+    updateCart()
     localStorage.removeItem('cart')
 }
 
 // REMOVE ITEM FROM CART
 function removeItemFromCart(id, precio){
-    cart = cart.filter( (item) => item.id !== id && item.precio !== precio) // filtrar el array quitando el producto con el id que quiero eliminar
+    let productoARemover = cart.find((fotoProd) => fotoProd.id == id && fotoProd.precioElegido == precio)
+    cart = cart.filter((item) => item !== productoARemover)
     updateCart()
+    contarProductos()
 }
 
 // GET TOTAL CART PRICE
@@ -452,6 +471,6 @@ function alertCompra() {
             background: 'rgba(54, 36, 113, 0.8)'
             })
         borrarCarrito()
-        //contarProductos()
+        contarProductos()
     })
 }

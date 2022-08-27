@@ -20,25 +20,25 @@
             flex-direction: column;
             gap: .3rem;
             h1 {
-                font-family: 'ChronoType';
-                font-size: 24px;
+                font-family: 'ChronoType' !important;
+                font-size: 24px !important;
             }
             
             h2 {
-                font-family: 'ChronoType';
-                font-size: 15px;
-                font-weight: 900;
+                font-family: 'ChronoType' !important;
+                font-size: 15px !important;
+                font-weight: 900 !important;
                 letter-spacing: 3px;
             }
             
             p {
-                font-family: 'ChronoType';
-                font-size: 19px;
+                font-family: 'ChronoType' !important;
+                font-size: 19px !important;
                 letter-spacing: 1px;
             }
         }
         .transition-img {
-            display: block !important;
+            display: block ;
             width: 16rem;
             //position: relative;
             //div {

@@ -14,11 +14,16 @@
         justify-content: space-around;
         align-items: center;
         position: fixed;
-        top: 94px;
+        top: 95px;
         left: 16.2rem;
         width: 75%;
         background-color: $negro;
         min-height: 6rem;
+        @media screen and (max-width: 1680px) {
+        
+            top: 94px;
+
+        }
         .store-section__back {
             width: 12rem;
             .store-section__back-btn {
@@ -50,6 +55,7 @@
             display: block;
         }
     }
+    
 
     //STORE
     .store-section__products {
@@ -100,7 +106,7 @@
                 
                 .store-section__body-card {
                     .store-section__name {
-                        font-family: 'ChronoType';
+                        font-family: 'ChronoType' !important;
                         font-size: 2rem;
                     }
                 }
@@ -257,10 +263,13 @@
                     grid-area: c4;
                 }
                 #vaciar--carrito {
-                    grid-area: c5;
+                    grid-area: c6;
+                    .btn--vaciar--carrito {
+                        width: 9.4rem;
+                    }
                 }
                 #realizar--compra {
-                    grid-area: c6;
+                    grid-area: c5;
                 }
             }
         }
