@@ -84,7 +84,8 @@
         "precio":[5000, 10000, 15000, 10000, 15000, 20000, 15000, 20000, 35000],
         "enStock":3,
         "imagen":"print8.jpg",
-        "descripcion":""
+        "imagenclose":"print8close.jpg",
+        "descripcion":"Un chanchito blanco, sobre una montaña de cuarzo"
     },
     {
         "id":8,
@@ -94,7 +95,8 @@
         "precio":[5000, 10000, 15000, 10000, 15000, 20000, 15000, 20000, 35000],
         "enStock":3,
         "imagen":"print9.jpg",
-        "descripcion":""
+        "imagenclose":"print9close.jpg",
+        "descripcion":"Un abejorro carpintero sobre el fruto seco de un liquidámbar delante de una amanita muscaria de cerámica "
     },
     {
         "id":9,
@@ -104,6 +106,7 @@
         "precio":[5000, 10000, 15000, 10000, 15000, 20000, 15000, 20000, 35000],
         "enStock":3,
         "imagen":"printt10.jpg",
+        "imagenclose":"print10close.jpg",
         "descripcion":""
     },
     {
@@ -178,12 +181,13 @@
     },
     {
         "id":17,
-        "nombre":"Hormigon dorado alado",
+        "nombre":"Luciernaga chilena",
         "tamaño":["20x30cm", "30x40cm", "40x30cm"],
         "enmarcado": ["sin marco",  "plastico", "madera"],
         "precio":[5000, 10000, 15000, 10000, 15000, 20000, 15000, 20000, 35000],
         "enStock":3,
         "imagen":"print18.jpg",
+        "imagenclose":"print18close.jpg",
         "descripcion":""
     },
     {
@@ -198,12 +202,13 @@
     },
     {
         "id":19,
-        "nombre":"Hormiga",
+        "nombre":"Hormigon negro",
         "tamaño":["20x30cm", "30x40cm", "40x30cm"],
         "enmarcado": ["sin marco",  "plastico", "madera"],
         "precio":[5000, 10000, 15000, 10000, 15000, 20000, 15000, 20000, 35000],
         "enStock":3,
         "imagen":"print20.jpg",
+        "imagenclose":"print20close.jpg",
         "descripcion":""
     },
     {
