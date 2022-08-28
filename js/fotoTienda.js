@@ -166,16 +166,13 @@ async function showProduct (){
                         for(x; x < 9; x++){
                             let a
                             let b = 0
-                            if (x == 0 || x == 1 || x == 2) {
+                            if (x < 3) {
                                 a = 0
-                            } else if (x == 3 || x == 4 || x == 5){
+                            } else if (x > 2 && x < 6){
                                 a = 1
-                            } else if (x == 6 || x == 7 || x == 8){
-                                a = 2
-                            }
-                            if (x == 3 || x == 4 || x == 5) {
                                 b = 3
-                            } else if (x == 6 || x == 7 || x == 8) {
+                            } else if (x > 5 && x < 9){
+                                a = 2
                                 b = 6
                             }
                             if (sizeUser == productoEncontrado.tamaño[a] && marcoUser == productoEncontrado.enmarcado[x - b]) {

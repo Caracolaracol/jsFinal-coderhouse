@@ -30,7 +30,7 @@
         "enStock":3,
         "imagen":"print3.jpg",
         "imagenclose":"print3close.jpg",
-        "descripcion":""
+        "descripcion":"sobre la concha de un caracol, pasea un Gorgojo"
     },
     {
         "id":3,
@@ -41,7 +41,7 @@
         "enStock":3,
         "imagen":"print4.jpg",
         "imagenclose":"print4close.jpg",
-        "descripcion":""
+        "descripcion":"La mariposa de la tarde, sobre una hoja de zarzamora del cajón del maipo te observa con curiosidad"
     },
     {
         "id":4,
@@ -51,7 +51,8 @@
         "precio":[5000, 10000, 15000, 10000, 15000, 20000, 15000, 20000, 35000],
         "enStock":3,
         "imagen":"print5.jpg",
-        "descripcion":""
+        "imagenclose":"print5close.jpg",
+        "descripcion":"La ninfa de un chinche asesnino (zelus renardii) Camina sobre una géoda de cuarzo"
     },
     {
         "id":5,
@@ -61,7 +62,8 @@
         "precio":[5000, 10000, 15000, 10000, 15000, 20000, 15000, 20000, 35000],
         "enStock":3,
         "imagen":"print6.jpg",
-        "descripcion":""
+        "imagenclose":"print6close.jpg",
+        "descripcion":"Un saltícido y una mosca verde en paz"
     },
     {
         "id":6,
@@ -71,7 +73,8 @@
         "precio":[5000, 10000, 15000, 10000, 15000, 20000, 15000, 20000, 35000],
         "enStock":3,
         "imagen":"print7.jpg",
-        "descripcion":""
+        "imagenclose":"print7close.jpg",
+        "descripcion":"Un hormigon dorado volando sobre un sendero del cerro san ramón"
     },
     {
         "id":7,
