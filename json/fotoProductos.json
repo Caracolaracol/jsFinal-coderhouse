@@ -156,11 +156,12 @@
     {
         "id":14,
         "nombre":"Chaqueta amarilla",
-        "tamaño":["20x30cm", "30x40cm", "40x30cm"],
+        "tamaño":["20x20cm", "30x30cm", "40x40cm"],
         "enmarcado": ["sin marco",  "plastico", "madera"],
         "precio":[5000, 10000, 15000, 10000, 15000, 20000, 15000, 20000, 35000],
         "enStock":3,
         "imagen":"print15.jpg",
+        "imagenclose":"print15close.jpg",
         "descripcion":""
     },
     {
@@ -171,6 +172,7 @@
         "precio":[5000, 10000, 15000, 10000, 15000, 20000, 15000, 20000, 35000],
         "enStock":3,
         "imagen":"print16.jpg",
+        "imagenclose":"print16close.jpg",
         "descripcion":""
     },
     {
@@ -181,6 +183,7 @@
         "precio":[5000, 10000, 15000, 10000, 15000, 20000, 15000, 20000, 35000],
         "enStock":3,
         "imagen":"print17.jpg",
+        "imagenclose":"print17close.jpg",
         "descripcion":""
     },
     {
@@ -202,6 +205,7 @@
         "precio":[5000, 10000, 15000, 10000, 15000, 20000, 15000, 20000, 35000],
         "enStock":3,
         "imagen":"print19.jpg",
+        "imagenclose":"print19close.jpg",
         "descripcion":""
     },
     {
@@ -223,6 +227,7 @@
         "precio":[5000, 10000, 15000, 10000, 15000, 20000, 15000, 20000, 35000],
         "enStock":3,
         "imagen":"print21.jpg",
+        "imagenclose":"print21close.jpg",
         "descripcion":""
     },
     {
@@ -233,6 +238,7 @@
         "precio":[5000, 10000, 15000, 10000, 15000, 20000, 15000, 20000, 35000],
         "enStock":3,
         "imagen":"print22.jpg",
+        "imagenclose":"print22close.jpg",
         "descripcion":""
     }
 
