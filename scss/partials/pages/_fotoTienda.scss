@@ -13,6 +13,7 @@
         flex-direction: row;
         justify-content: space-around;
         align-items: center;
+        align-content: center;
         position: fixed;
         top: 95px;
         left: 16.2rem;
@@ -48,6 +49,12 @@
             align-items: center;
             flex-grow: 0;
             width: 19rem;
+            #counter {
+                p {
+                    font-family: 'pkmnfont' !important;
+                    overflow: hidden;
+                }
+            }
         }
         .store-section__cart-btn {
             display: block;

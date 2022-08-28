@@ -202,32 +202,22 @@ async function addToCart(id) {
             let sizeUser = selectSize.value
             let marcoUser = selectMarco.value
             let precioFinalProducto
-            if (sizeUser == itemFound.tamaño[0] && marcoUser == itemFound.enmarcado[0]) {
-                precioFinalProducto = itemFound.precio[0]
-            }
-            if (sizeUser == itemFound.tamaño[0] && marcoUser == itemFound.enmarcado[1]) {
-                precioFinalProducto = itemFound.precio[1]
-            }
-            if (sizeUser == itemFound.tamaño[0] && marcoUser == itemFound.enmarcado[2]) {
-                precioFinalProducto = itemFound.precio[2]
-            }
-            if (sizeUser == itemFound.tamaño[1] && marcoUser == itemFound.enmarcado[0]) {
-                precioFinalProducto = itemFound.precio[3]
-            }
-            if (sizeUser == itemFound.tamaño[1] && marcoUser == itemFound.enmarcado[1]) {
-                precioFinalProducto = itemFound.precio[4]
-            }
-            if (sizeUser == itemFound.tamaño[1] && marcoUser == itemFound.enmarcado[2]) {
-                precioFinalProducto = itemFound.precio[5]
-            }
-            if (sizeUser == itemFound.tamaño[2] && marcoUser == itemFound.enmarcado[0]) {
-                precioFinalProducto = itemFound.precio[6]
-            }
-            if (sizeUser == itemFound.tamaño[2] && marcoUser == itemFound.enmarcado[1]) {
-                precioFinalProducto = itemFound.precio[7]
-            }
-            if (sizeUser == itemFound.tamaño[2] && marcoUser == itemFound.enmarcado[2]) {
-                precioFinalProducto = itemFound.precio[8]
+            let x = 0
+            for(x; x < 9; x++){
+                let a
+                let b = 0
+                if (x < 3) {
+                    a = 0
+                } else if (x > 2 && x < 6){
+                    a = 1
+                    b = 3
+                } else if (x > 5 && x < 9){
+                    a = 2
+                    b = 6
+                }
+                if (sizeUser == itemFound.tamaño[a] && marcoUser == itemFound.enmarcado[x - b]) {
+                    precioFinalProducto = itemFound.precio[x]
+                }
             }
             const enCarrito = cart.find((fotoProd) => fotoProd.id == itemFound.id) //primer producto en el carrito que encuentra con el mismo id
             const enCarritoMulti = cart.filter((fotoProd) => fotoProd.id == itemFound.id) // array de los productos con el mismo id, que ya están en el carrito
@@ -251,34 +241,23 @@ async function addToCart(id) {
             let marcoUser = selectMarco.value
             
             let precioFinalProducto
-            if (sizeUser == itemFound.tamaño[0] && marcoUser == itemFound.enmarcado[0]) {
-                precioFinalProducto = itemFound.precio[0]
+            let x = 0
+            for(x; x < 9; x++){
+                let a
+                let b = 0
+                if (x < 3) {
+                    a = 0
+                } else if (x > 2 && x < 6){
+                    a = 1
+                    b = 3
+                } else if (x > 5 && x < 9){
+                    a = 2
+                    b = 6
+                }
+                if (sizeUser == itemFound.tamaño[a] && marcoUser == itemFound.enmarcado[x - b]) {
+                    precioFinalProducto = itemFound.precio[x]
+                }
             }
-            if (sizeUser == itemFound.tamaño[0] && marcoUser == itemFound.enmarcado[1]) {
-                precioFinalProducto = itemFound.precio[1]
-            }
-            if (sizeUser == itemFound.tamaño[0] && marcoUser == itemFound.enmarcado[2]) {
-                precioFinalProducto = itemFound.precio[2]
-            }
-            if (sizeUser == itemFound.tamaño[1] && marcoUser == itemFound.enmarcado[0]) {
-                precioFinalProducto = itemFound.precio[3]
-            }
-            if (sizeUser == itemFound.tamaño[1] && marcoUser == itemFound.enmarcado[1]) {
-                precioFinalProducto = itemFound.precio[4]
-            }
-            if (sizeUser == itemFound.tamaño[1] && marcoUser == itemFound.enmarcado[2]) {
-                precioFinalProducto = itemFound.precio[5]
-            }
-            if (sizeUser == itemFound.tamaño[2] && marcoUser == itemFound.enmarcado[0]) {
-                precioFinalProducto = itemFound.precio[6]
-            }
-            if (sizeUser == itemFound.tamaño[2] && marcoUser == itemFound.enmarcado[1]) {
-                precioFinalProducto = itemFound.precio[7]
-            }
-            if (sizeUser == itemFound.tamaño[2] && marcoUser == itemFound.enmarcado[2]) {
-                precioFinalProducto = itemFound.precio[8]
-            }
-
             cart.push({...itemFound, cantidad: 1, precioElegido: precioFinalProducto, sizeChosen: sizeUser, marcoChosen: marcoUser})
             const {nombre, enStock} = itemFound
             console.log(`El producto ${nombre} tiene ${enStock} unidades en stock`)
@@ -328,11 +307,6 @@ function contarProductos(){
     for (c; c < cart.length; c++){
         contador = contador + cart[c].cantidad
     }
-    /*
-    cart.forEach((prod) => {
-        contador = contador + prod.cantidad
-    })
-    */
     counter.innerHTML = `
                 <p>${contador}</p>
                 `

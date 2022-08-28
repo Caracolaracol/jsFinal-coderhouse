@@ -43,7 +43,7 @@ body {
 
 h1 {
   font-size: 2rem !important;
-  margin-bottom: .5rem;
+  margin-bottom: 0rem;
   font-weight: 600; }
 
 h2 {
@@ -51,7 +51,8 @@ h2 {
   line-height: normal; }
 
 h3 {
-  margin-bottom: .5rem; }
+  margin-bottom: 0rem;
+  font-weight: 500; }
 
 p {
   font-size: 13px;
@@ -283,6 +284,7 @@ ul {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    align-content: center;
     position: fixed;
     top: 95px;
     left: 16.2rem;
@@ -311,6 +313,9 @@ ul {
       align-items: center;
       flex-grow: 0;
       width: 19rem; }
+      .store-section .store-section__title .store-section__cart-items #counter p {
+        font-family: 'pkmnfont' !important;
+        overflow: hidden; }
     .store-section .store-section__title .store-section__cart-btn {
       display: block; }
   .store-section .store-section__products .store-section__cards {
@@ -672,14 +677,14 @@ ul {
 
 .btn {
   border: none;
-  color: #b5afc1;
+  color: #b5afc1 !important;
   text-decoration: none;
   border-radius: 4px;
-  background-color: rgba(48, 31, 104, 0.385);
+  background-color: rgba(48, 31, 104, 0.385) !important;
   transition-duration: 0.2s;
   cursor: pointer;
   padding: 0.8rem; }
   .btn:hover {
-    background-color: #1e1247;
+    background-color: #1e1247 !important;
     /* Green */
     color: #ddd4ed; }

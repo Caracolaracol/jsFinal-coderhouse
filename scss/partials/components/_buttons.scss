@@ -2,15 +2,15 @@
 
 .btn {
     border: none;
-    color: $white__medium;
+    color: $white__medium !important;
     text-decoration: none;
     border-radius: 4px;
-    background-color: $purpura__light;
+    background-color: $purpura__light !important;
     transition-duration: 0.2s;
     cursor: pointer;
     padding: 0.8rem;
     &:hover{
-        background-color: rgb(30, 18, 71); /* Green */
+        background-color: rgb(30, 18, 71) !important; /* Green */
         color:rgb(221, 212, 237);
     }
 }
