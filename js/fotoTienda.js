@@ -90,9 +90,9 @@ async function showProduct (){
                 let productoEncontrado = await productos.find((fotoProd) => fotoProd.id == this.id)
                 apartSection.innerHTML = `
                     <div class="apart-section__card">
-                        <div class="apart-section__container-image" id="mycarousel">
+                        <div class="apart-section__container-image apart-section__image" id="mycarousel">
                             <!-- <img class="apart-section__image" src="../images/${productoEncontrado.imagen}" alt=""> -->
-                            <div id="carouselExampleControls" class="carousel slide h-100" data-ride="carousel">
+                            <div id="carouselExampleControls" class="carousel slide h-100 " data-ride="carousel">
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
                                         <img class="d-block w-100" src="../images/${productoEncontrado.imagen}" alt="First slide">
