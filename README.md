@@ -6,7 +6,7 @@ Proyecto final para el curso de js de Coderhouse.
 
 
 # e-commerce de FotoProductos 
-Proyecto realizado para el curso de JavaScript de Coderhouse en la carrera de desarrollo Frontend, se trata de una tienda de prints de mis fotografías. La tienda permite la venta de fotografías a diferentes tamaños y enmarcados a través de 3 principales secciones que el usuario recorrerá: La primera para elegir la fotografía, luego para elegir el tamaño y enmarcado y finalmente el carrito de compras.
+Proyecto realizado para el curso de JavaScript de Coderhouse en la carrera de desarrollo Frontend, se trata de una tienda de prints de mis fotografías. La tienda permite la venta de fotografías a diferentes tamaños y enmarcados a través de 3 principales secciones que el usuario recorrerá: La primera para elegir la fotografía, luego para elegir tanto el tamaño como el enmarcado y finalmente el carrito de compras.
 
 
 ## Simulador de centro pokemon privatizado

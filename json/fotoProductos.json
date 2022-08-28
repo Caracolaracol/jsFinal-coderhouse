@@ -117,7 +117,8 @@
         "precio":[5000, 10000, 15000, 10000, 15000, 20000, 15000, 20000, 35000],
         "enStock":3,
         "imagen":"print11.jpg",
-        "descripcion":""
+        "imagenclose":"print11close.jpg",
+        "descripcion":"Posandose sobre una ramita seca, un coniópterigido en una mañana invernal"
     },
     {
         "id":11,
@@ -127,7 +128,8 @@
         "precio":[5000, 10000, 15000, 10000, 15000, 20000, 15000, 20000, 35000],
         "enStock":3,
         "imagen":"print12.jpg",
-        "descripcion":""
+        "imagenclose":"print12close.jpg",
+        "descripcion":"Una abeja Joya descansando sobre una hoja de ligustrina"
     },
     {
         "id":12,
@@ -137,6 +139,7 @@
         "precio":[5000, 10000, 15000, 10000, 15000, 20000, 15000, 20000, 35000],
         "enStock":3,
         "imagen":"print13.jpg",
+        "imagenclose":"print13close.jpg",
         "descripcion":""
     },
     {
@@ -147,6 +150,7 @@
         "precio":[5000, 10000, 15000, 10000, 15000, 20000, 15000, 20000, 35000],
         "enStock":3,
         "imagen":"print14.jpg",
+        "imagenclose":"print14close.jpg",
         "descripcion":""
     },
     {

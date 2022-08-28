@@ -314,7 +314,8 @@ ul {
       flex-grow: 0;
       width: 19rem; }
       .store-section .store-section__title .store-section__cart-items #counter p {
-        font-family: 'pkmnfont' !important;
+        font-family: 'ChronoType' !important;
+        font-size: 2.2rem !important;
         overflow: hidden; }
     .store-section .store-section__title .store-section__cart-btn {
       display: block; }
