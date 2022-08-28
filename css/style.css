@@ -491,8 +491,7 @@ ul {
   max-height: 38rem;
   border-style: solid;
   border-width: 1rem;
-  border-color: rgba(0, 0, 0, 0.389);
-  box-shadow: 0px 0px 5px black; }
+  border-color: rgba(0, 0, 0, 0.389); }
   @media screen and (max-width: 1680px) {
     .apart-section__image {
       max-height: 60rem; } }
