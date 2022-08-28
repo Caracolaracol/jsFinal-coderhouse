@@ -92,19 +92,13 @@ async function showProduct (){
                     <div class="apart-section__card">
                         <div class="apart-section__container-image" id="mycarousel">
                             <!-- <img class="apart-section__image" src="../images/${productoEncontrado.imagen}" alt=""> -->
-                            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                            <div id="carouselExampleControls" class="carousel slide h-100" data-ride="carousel">
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
                                         <img class="d-block w-100" src="../images/${productoEncontrado.imagen}" alt="First slide">
                                     </div>
                                     <div class="carousel-item">
-                                        <img class="d-block w-100" src="../images/print3.jpg" alt="Second slide">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img class="d-block w-100" src="../images/print3.jpg" alt="Second slide">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img class="d-block w-100" src="../images/print3.jpg" alt="Second slide">
+                                        <img class="d-block w-100" src="../images/${productoEncontrado.imagenclose}" alt="Second slide">
                                     </div>
                                 </div>
                                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">

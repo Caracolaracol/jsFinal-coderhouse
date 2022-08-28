@@ -7,6 +7,7 @@
         "precio":[5000, 10000, 15000, 10000, 15000, 20000, 15000, 20000, 35000],
         "enStock":3,
         "imagen":"print1.jpg",
+        "imagenclose":"print1close.jpg",
         "descripcion":"Chinita bailando cha cha chá sobre una amatista morada."
     },
     {  
@@ -17,6 +18,7 @@
         "precio":[5000, 10000, 15000, 10000, 15000, 20000, 15000, 20000, 35000],
         "enStock":3,
         "imagen":"print2.jpg",
+        "imagenclose":"print2close.jpg",
         "descripcion": "Sobre una hoja de hortensia dos chinitas panda (psilobora picta) yacen disfrutando la vida"
     },
     {
@@ -27,6 +29,7 @@
         "precio":[5000, 10000, 15000, 10000, 15000, 20000, 15000, 20000, 35000],
         "enStock":3,
         "imagen":"print3.jpg",
+        "imagenclose":"print3close.jpg",
         "descripcion":""
     },
     {
@@ -37,6 +40,7 @@
         "precio":[5000, 10000, 15000, 10000, 15000, 20000, 15000, 20000, 35000],
         "enStock":3,
         "imagen":"print4.jpg",
+        "imagenclose":"print4close.jpg",
         "descripcion":""
     },
     {
