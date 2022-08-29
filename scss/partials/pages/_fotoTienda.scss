@@ -125,17 +125,22 @@
         //PRODUCT
         .apart-section {
             display: none;
+            
             .apart-section__card {
+                
                 display: flex;
                 width: 96%;
                 min-height: 10rem;
                 padding-top: 6rem;
+                max-height: 98%;
                 animation: aparecer  650ms ease-in;
                 .apart-section__container-image {
+                    
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     align-content: center;
+                    height: auto;
                     max-width: 50rem;
                     max-height: 66rem;
                     background-color: $lila__dark__transparent;
@@ -156,23 +161,61 @@
                     border-style: solid;
                     border-width: 1px 1px 1px 0px;
                     border-color: rgba(80, 80, 80, 0.305);
+                    padding: 1rem;
                     .apart-section__title {
-                        flex: 1 0 auto;
-                        align-self: flex-start;
+                        //flex: 1 0 auto;
+                        align-self: center;
+                        justify-content: center;
+                        align-content: center;
+                        align-items: center;
+                        padding-top: 1rem;
+                    }
+                    .apart-section__data {
+                        height: 6rem;
+                        margin: 2.5rem;
+                        display: flex;
+                        
+                        align-self: center;
+                        justify-content: center;
+                        align-content: center;
+                        align-items: center;
                     }
                     form {
-                        display: flex;
-                        flex-direction: column;
+                        //display: flex;
+                        //flex-direction: column;
                         max-width: 24rem;
+                        //gap: 8px;
+                        //align-items: flex-end;
+                        text-align: left;
+                        padding: 1rem;
+                        label {
+                            text-align: right;
+                            margin-bottom: 4px;
+                        }
                         .apart-section__select{
                             border-width: 0px;
                             background-color: $purpura__light;
                             width: 8rem;
                             height: 2.3rem;
-                            //text-align: center;
+                            border-radius: 5px;
+                            word-wrap: break-word;
+                            margin-bottom: 4px;
+
+                        }
+                        .totaldiv {
+                            text-align: right;
+                        }
+                        .apart-section__price {
+                            margin: .2rem;
+                            text-align: right;
+                            h2 {
+                                font-family: 'ChronoType' !important;
+                                font-size: 2rem !important;
+                            }
                         }
                         .apart-section__onclick {
                             padding: 4px;
+                            text-align: right;
                         }
                     }
                 }

@@ -132,9 +132,9 @@ async function showProduct (){
                                     <option value="${productoEncontrado.enmarcado[1]}">${productoEncontrado.enmarcado[1]}</option>
                                     <option value="${productoEncontrado.enmarcado[2]}">${productoEncontrado.enmarcado[2]}</option>
                                 </select>
-                                <div>
+                                <div class="totaldiv">
                                     <h2>
-                                    Precio total:
+                                    Total
                                     </h2>
                                 </div>
                                 <div class="apart-section__price">
