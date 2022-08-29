@@ -150,6 +150,15 @@
                         max-width: 36rem;
                         max-height: 38rem;
                     }
+                    .carousel {
+                        .carousel-inner{
+                            .carousel-item {
+                                img {
+                                    animation: aparecer  250ms ease-in;
+                                }
+                            }
+                        }
+                    }
                 }
                 
                 .apart-section__container-data {

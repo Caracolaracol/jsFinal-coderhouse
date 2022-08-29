@@ -5,6 +5,9 @@
     height: 4.4rem;
     min-width: 100vw;
     background-color: $negro;
+    @media screen and (max-width: 828px) {
+        display: none;
+    }
 }
 .footer {
     display: flex;

@@ -384,6 +384,8 @@ ul {
             min-width: 28rem;
             max-width: 36rem;
             max-height: 38rem; } }
+        .store-section .store-section__products .apart-section .apart-section__card .apart-section__container-image .carousel .carousel-inner .carousel-item img {
+          animation: aparecer  250ms ease-in; }
       .store-section .store-section__products .apart-section .apart-section__card .apart-section__container-data {
         display: flex;
         flex-grow: 2;
@@ -548,6 +550,9 @@ ul {
       display: flex;
       flex-direction: column;
       gap: .3rem; }
+      @media screen and (max-width: 828px) {
+        .welcome-section .welcome-section__body .welcome-section__item {
+          max-width: 17rem; } }
       .welcome-section .welcome-section__body .welcome-section__item h1 {
         font-family: 'ChronoType' !important;
         font-size: 24px !important; }
@@ -562,7 +567,8 @@ ul {
         letter-spacing: 1px; }
     .welcome-section .welcome-section__body .transition-img {
       display: block;
-      width: 16rem; }
+      width: 16rem;
+      overflow: hidden; }
       .welcome-section .welcome-section__body .transition-img .round-img2 {
         position: sticky;
         animation-name: transition-img-FadeInOut;
@@ -590,6 +596,9 @@ ul {
       height: 5rem;
       width: 55rem;
       overflow: hidden; }
+      @media screen and (max-width: 828px) {
+        .welcome-section .welcome-section__body .ws-height {
+          height: 8rem; } }
       .welcome-section .welcome-section__body .ws-height h1 {
         overflow: hidden; }
       .welcome-section .welcome-section__body .ws-height p {
@@ -623,6 +632,10 @@ ul {
 .main-section {
   width: 65rem;
   background-color: #050307; }
+  @media screen and (max-width: 828px) {
+    .main-section {
+      margin-left: 2rem;
+      max-width: 20rem; } }
   .main-section .main div h4 {
     text-align: center; }
 
@@ -631,6 +644,9 @@ ul {
   height: 4.4rem;
   min-width: 100vw;
   background-color: #050307; }
+  @media screen and (max-width: 828px) {
+    .footer-container {
+      display: none; } }
 
 .footer {
   display: flex;
@@ -674,6 +690,9 @@ ul {
   position: relative;
   height: 100%;
   width: 16rem; }
+  @media screen and (max-width: 828px) {
+    .nav-container {
+      display: none; } }
 
 .main-nav {
   position: fixed;
