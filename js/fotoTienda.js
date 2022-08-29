@@ -282,9 +282,9 @@ async function addToCart(id) {
             transition: "all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1)",
             animation : "aparecer 250ms ease-in",
             left : "88%",
-            zIndex : "99",
+            zIndex : "1",
             borderRadius: "4px",
-            backdropFilter: "blur(8.9px)"
+            //backdropFilter: "blur(8.9px)"
             /* Created with https://www.css-gradient.com */
             },
             onClick: function(){} // Callback after click
