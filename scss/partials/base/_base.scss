@@ -11,6 +11,7 @@
 }
 #root {
     background-color: $negro;
+    overflow-x: hidden;
 }
 body {
     min-height:100vh;  
@@ -20,7 +21,16 @@ body {
     line-height: normal;
 }
 
-
+input {
+    border-width: 2px;
+    border-color: rgb(66, 64, 67);
+    background-color: rgba(25, 20, 55, 0.718);
+    width: 6rem;
+    height: 1.6rem;
+    border-radius: 5px;
+    word-wrap: break-word;
+    margin-bottom: 4px;
+}
 // FONTS
 @font-face {
     font-family: 'pkmnfont';

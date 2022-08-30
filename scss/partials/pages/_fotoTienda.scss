@@ -181,7 +181,7 @@
                     }
                     .apart-section__data {
                         height: 6rem;
-                        margin: 2.5rem;
+                        //margin: 2.5rem;
                         display: flex;
                         
                         align-self: center;
@@ -196,7 +196,7 @@
                         //gap: 8px;
                         //align-items: flex-end;
                         text-align: left;
-                        padding: 1rem;
+                        //padding: 1rem;
                         label {
                             text-align: right;
                             margin-bottom: 4px;
@@ -348,9 +348,9 @@
 .apart-section__image {
     //margin: 1rem;
     max-height: 38rem;
-    border-style: solid;
-    border-width: 1rem;
-    border-color: rgba(0, 0, 0, 0.389);
+    //border-style: solid;
+    //border-width: 1rem;
+    //border-color: rgba(0, 0, 0, 0.389);
     //box-shadow: 0px 0px 5px black;
     @media screen and (max-width: 1680px) {
         max-height: 60rem;

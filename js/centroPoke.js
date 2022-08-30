@@ -7,11 +7,12 @@ let select3 = document.getElementById('select__Poke3')
 let select4 = document.getElementById('select__Poke4')
 let select5 = document.getElementById('select__Poke5')
 let select6 = document.getElementById('select__Poke6')
+let pPoke = document.querySelector('#div-btn-poke')
 // traer los datos de la api de pokemon a los select del formulario del html
 fetch("https://pokeapi.co/api/v2/pokemon?limit=150&offset=0") // api de los primeros 150 pokemon
 .then(response => response.json())
 .then(data => {
-    arrayPkm = data.results // pido sólo lo que contiene la propiedad results(el array con los 150 pokemon)
+    let arrayPkm = data.results // pido sólo lo que contiene la propiedad results(el array con los 150 pokemon)
     arrayPkm.forEach(poke => {
         select1.innerHTML += `
         <option value="${poke.name}">${poke.name}</option>
@@ -37,7 +38,6 @@ fetch("https://pokeapi.co/api/v2/pokemon?limit=150&offset=0") // api de los prim
 //Arrays vacios
 let ids = []
 let pokemones = []
-
 //variables vacias creadas
 let numero
 let hp1, hp2, hp3, hp4, hp5, hp6
@@ -52,11 +52,7 @@ let validador = false
 let validadorMostrarFormPoke = false
 let validadorId = false
 let final = document.querySelector('#div-final')
-
-
-//variables vacias creadas
 let idEncontrado1, idEncontrado2, idEncontrado3, idEncontrado4, idEncontrado5, idEncontrado6
-
 //contenedor de las cards de cada pokemon en el html
 let container1 = document.querySelector('.card--1')
 let container2 = document.querySelector('.card--2')
@@ -75,10 +71,7 @@ class Pokemon {
     }
 }
 
-
-
 //uso de innerHTML
-
 let nombreUsuario
 let divNombre = document.querySelector('#nombre--usuario')
 const formName = document.querySelector('#form--name')
@@ -98,11 +91,13 @@ function mostrarOcultar() {
     divNombre.innerHTML = `<h3> Hola <i>${nombreUsuario}</i> como estas? soy la enfermera Joy!, Bienvenidx al centro pokemon.</h3>`
 }
 
-let pPoke = document.querySelector('#div-btn-poke')
+
 let divThx = document.querySelector('#div--gracias')
+let btnCurar = document.querySelector('.btn--curar')
 // Boton para iniciar simulador
-document.querySelector('.btn--curar').addEventListener('click', function(){
+btnCurar.addEventListener('click', function(){
     pPoke.style.display = 'block';
+    btnCurar.style.display = 'none'
 })
 
 //click y aparecerá el div input--hidden
@@ -115,22 +110,20 @@ document.querySelector('.btn--poke').addEventListener('click', (event) => {
 
 const form = document.querySelector('#form--poke')
 const formNombrar = document.querySelector('#form--nombrar')
-// constantes para mostrar cada input para los pokemon del usuario
+// mostrar input para los pokemon del usuario
 const mostrarInputPoke1 = document.querySelectorAll('.input--poke1')
 const mostrarInputPoke2 = document.querySelectorAll('.input--poke2')
 const mostrarInputPoke3 = document.querySelectorAll('.input--poke3')
 const mostrarInputPoke4 = document.querySelectorAll('.input--poke4')
 const mostrarInputPoke5 = document.querySelectorAll('.input--poke5')
 const mostrarInputPoke6 = document.querySelectorAll('.input--poke6')
-
 const mostrarInputId1 = document.querySelectorAll('.input3--poke1')
 const mostrarInputId2 = document.querySelectorAll('.input3--poke2')
 const mostrarInputId3 = document.querySelectorAll('.input3--poke3')
 const mostrarInputId4 = document.querySelectorAll('.input3--poke4')
 const mostrarInputId5 = document.querySelectorAll('.input3--poke5')
 const mostrarInputId6 = document.querySelectorAll('.input3--poke6')
-
-// constantes para cada hp para los pokemon del usuario
+// mostrar input de hp para los pokemon del usuario
 const mostrarInputHp1 = document.querySelectorAll('.input2--poke1')
 const mostrarInputHp2 = document.querySelectorAll('.input2--poke2')
 const mostrarInputHp3 = document.querySelectorAll('.input2--poke3')
@@ -139,12 +132,9 @@ const mostrarInputHp5 = document.querySelectorAll('.input2--poke5')
 const mostrarInputHp6 = document.querySelectorAll('.input2--poke6')
 
 form.addEventListener('submit', validarForm1)
-
-
 function mostrarFormPokes(){
     formNombrar.style.display = 'block';
 }
-
 // funcion para mostrar los inputs dependiendo del numero de pokemones a curar
 function mostrarFormPoke(){
     for (i = 1; i <= numero; i++) {
@@ -212,7 +202,9 @@ function mostrarFormPoke(){
                     
                 })
             }
-            
+            mostrarInputId4.forEach(input => {
+                input.style.display = 'block'
+            })
         }
         if (i === 5){
             mostrarInputPoke5.forEach(input => {
@@ -360,7 +352,6 @@ let btnPoke = document.querySelector('#btn--poke')
 function validarClickNombrar(e){
     e.preventDefault()
     ingresoDatos()
-    
     pokemon1 = new Pokemon(nombre1, nivel1, posicion1, id1)
     pokemon2 = new Pokemon(nombre2, nivel2, posicion2, id2)
     pokemon3 = new Pokemon(nombre3, nivel3, posicion3, id3)
@@ -370,13 +361,12 @@ function validarClickNombrar(e){
     pokemones = [pokemon1] // array de objetos
     pushArray()
     console.log(pokemones)
-
     //ocultar formulario anterior
     formNombrar.style.display = 'none';
     form.style.display = 'none';
     btnPoke.style.display = 'none'
-
     //mostrar abrir hp
+    pPoke.style.display = 'none'
     hpHidden.style.display = 'block';
 }
 
@@ -475,7 +465,6 @@ function ingresoDatos2(){
                 if (i === 1){
                     hp1 = parseFloat(document.querySelector('#hp--poke1').value)
                 }
-                
                 break
             case 2:
                 if (i === 2){
@@ -490,19 +479,16 @@ function ingresoDatos2(){
             case 4:
                 if (i === 4){
                     hp4 = parseFloat(document.querySelector('#hp--poke4').value)
-                    
                 }
                 break
             case 5:
                 if (i === 5){
                     hp5 = parseFloat(document.querySelector('#hp--poke5').value)
-                    
                 }
                 break
             case 6:
                 if (i === 6){
                     hp6 = parseFloat(document.querySelector('#hp--poke6').value)
-                    
                 }
                 break
             default:
@@ -560,18 +546,18 @@ function mostrarCosto(){
     divCost.innerHTML = `
         <h3>Curar a tus pokemon cuesta ${pokeCalc()} dolares!</h3>
         `
-    
 }
 
 function ocultarForm() { 
     //hide
+    let pPoke = document.querySelector('#div-btn-poke')
     pPoke.style.display = 'none'
     formHp.style.display = 'none'
     abrirHp.style.display = 'none'
     //show
     btnPagar.style.display = 'block'
 }
-
+// CALCULADORA FINAL DEL COSTO DEL SERVICIO
 function pokeCalc () {
     function calculadorPoke (pokeNumber = 1, dolar = 10) { // funcion para calcular costo base 
         return pokeNumber * dolar
@@ -831,33 +817,93 @@ function pushId() {
     }
 }
 
-function contenedorHtml() {
+
+async function contenedorHtml() {
+    fetch("https://pokeapi.co/api/v2/pokemon?limit=150&offset=0") // api de los primeros 150 pokemon
+    .then(response => response.json())
+    .then(async data => {
+    let arrayPkmFinal = await data.results // pido sólo lo que contiene la propiedad results(el array con los 150 pokemon)
     for (i = 1; i <= numero; i++) {
         if (i === 1) {
-            container1.innerHTML = `<p>${ids[0].nombre}</p>
-                                        <p>Nivel${ids[0].nivel}</p>` 
+            let miau = arrayPkmFinal.find((elem) => elem.name == ids[0].nombre)
+            let urlApiPoke1 = miau.url 
+            fetch(urlApiPoke1)
+            .then(resp => resp.json())
+            .then(async dat => {
+                let sprites = await dat.sprites
+                container1.innerHTML = `<p>${ids[0].nombre}</p>
+                                        <p>Nivel${ids[0].nivel}</p>
+                                        <img src="${sprites.front_default}">
+                                        `
+            })
         }
         if (i === 2) {
-            container2.innerHTML = `<p>${ids[1].nombre}</p>
-                                        <p>Nivel${ids[1].nivel}</p>`
+            let miau = arrayPkmFinal.find((elem) => elem.name == ids[1].nombre)
+            let urlApiPoke1 = miau.url 
+            fetch(urlApiPoke1)
+            .then(resp => resp.json())
+            .then(async dat => {
+                let sprites = await dat.sprites
+                container2.innerHTML = `<p>${ids[1].nombre}</p>
+                                        <p>Nivel${ids[1].nivel}</p>
+                                        <img src="${sprites.front_default}">
+                                        `
+            })
         }
         if (i === 3) {
-            container3.innerHTML += `<p>${ids[2].nombre}</p>
-                                        <p>Nivel${ids[2].nivel}</p>`
+            let miau = arrayPkmFinal.find((elem) => elem.name == ids[2].nombre)
+            let urlApiPoke1 = miau.url 
+            fetch(urlApiPoke1)
+            .then(resp => resp.json())
+            .then(async dat => {
+                let sprites = await dat.sprites
+                container3.innerHTML = `<p>${ids[2].nombre}</p>
+                                        <p>Nivel${ids[2].nivel}</p>
+                                        <img src="${sprites.front_default}">
+                                        `
+            })
         }
         if (i === 4) {
-            container4.innerHTML = `<p>${ids[3].nombre}</p>
-                                        <p>Nivel${ids[3].nivel}</p>`
+            let miau = arrayPkmFinal.find((elem) => elem.name == ids[3].nombre)
+            let urlApiPoke1 = miau.url 
+            fetch(urlApiPoke1)
+            .then(resp => resp.json())
+            .then(async dat => {
+                let sprites = await dat.sprites
+                container4.innerHTML = `<p>${ids[3].nombre}</p>
+                                        <p>Nivel${ids[3].nivel}</p>
+                                        <img src="${sprites.front_default}">
+                                        `
+            })
         }
         if (i === 5) {
-            container5.innerHTML = `<p>${ids[4].nombre}</p>
-                                        <p>Nivel${ids[4].nivel}</p>`
+            let miau = arrayPkmFinal.find((elem) => elem.name == ids[4].nombre)
+            let urlApiPoke1 = miau.url 
+            fetch(urlApiPoke1)
+            .then(resp => resp.json())
+            .then(async dat => {
+                let sprites = await dat.sprites
+                container5.innerHTML = `<p>${ids[4].nombre}</p>
+                                        <p>Nivel${ids[4].nivel}</p>
+                                        <img src="${sprites.front_default}">
+                                        `
+            })
         }
         if (i === 6){
-            container6.innerHTML = `<p>${ids[5].nombre}</p>
-                                        <p>Nivel${ids[5].nivel}</p>`
+            let miau = arrayPkmFinal.find((elem) => elem.name == ids[5].nombre)
+            let urlApiPoke1 = miau.url 
+            fetch(urlApiPoke1)
+            .then(resp => resp.json())
+            .then(async dat => {
+                let sprites = await dat.sprites
+                container6.innerHTML = `<p>${ids[5].nombre}</p>
+                                        <p>Nivel${ids[5].nivel}</p>
+                                        <img src="${sprites.front_default}">
+                                        `
+            })
         }
     }
+})
 }
 
 function ocultarForm2() {

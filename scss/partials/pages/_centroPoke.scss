@@ -1,34 +1,201 @@
+@import "fotoTienda.scss";
+
 .main-section {
     margin-left: 20rem;
     margin-top: 4rem;
-}
-
-#main-title {
-    margin-bottom: 2rem;
-    h1 {
-        font-family: 'pkmnfont' !important;
+    overflow-x: hidden;
+    main {
+        #main-title {
+            margin-bottom: 2rem;
+            h1 {
+                font-family: 'pkmnfont' !important;
+            }
+        }
+        #form--name {
+            display: flex;
+            flex-direction: row;
+            align-content: center;
+            gap: 5px;
+            align-items: center;
+            #ask--name {
+                height: 1.5rem;
+            }
+        }
+        .main-subtitle {
+            display: none;
+            margin-bottom: 2rem;
+            justify-content: space-evenly;
+            animation: aparecer  650ms ease-in;
+            #nombre--usuario {
+                margin-bottom: 1rem;
+                width: 16rem;
+                text-align: center;
+                flex-grow: 0;
+                h3 {
+                    font-family: 'pkmnfont' !important; 
+                    font-size: 13px !important;
+                    letter-spacing: 1px;
+                    i {
+                        font-family: 'pkmnfont' !important; 
+                        font-size: 13px !important;
+                        font-weight: bolder;
+                    }
+                }
+            }
+            #div--btn {
+                .btn--curar {
+                    border: none;
+                    margin-left: 3rem;
+                    color: $white__medium !important;
+                    background-color: $purpura__light !important;
+                    cursor: pointer;
+                    padding: 0.8rem;
+                    &:hover{
+                        background-color: rgb(30, 18, 71) !important; 
+                        color:rgb(221, 212, 237);
+                    }
+                }
+            }
+            
+        }
+        #div-btn-poke {
+            display: none;
+            text-align: center;
+            animation: aparecer  650ms ease-in;
+            #btn--poke {
+                display: block;
+            }
+            .btn--poke {
+                margin-top: 9px;
+                margin-left: 14rem;
+                margin-bottom: 2rem;
+            }
+        }
+        #input--hidden {
+            display: none;
+            animation: aparecer  650ms ease-in;
+            div {
+                #form--poke {
+                    display: block;
+                }
+                #p1--invalido {
+                    display: none;
+                }
+            }
+            #form--nombrar {
+                display: none;
+                animation: aparecer  350ms ease-in;
+                #form--nombrar--pokes{
+                    display: flex;
+                    flex-direction: column;
+                    #nivelPoke1 {
+                        margin-bottom: 2rem;
+                    }
+                    #nivelPoke2 {
+                        margin-bottom: 2rem;
+                    }
+                    #nivelPoke3 {
+                        margin-bottom: 2rem;
+                    }
+                    #nivelPoke4 {
+                        margin-bottom: 2rem;
+                    }
+                    #nivelPoke5 {
+                        margin-bottom: 2rem;
+                    }
+                    #nivelPoke6 {
+                        margin-bottom: 2rem;
+                    }
+                    .select {
+                        border-width: 0px;
+                        background-color: $purpura__light;
+                        width: 8rem;
+                        height: 2.3rem;
+                        border-radius: 5px;
+                        word-wrap: break-word;
+                        margin-bottom: 4px;
+                    }
+                    #btn--nombrar {
+                        @extend .btn--curar;
+                        margin-bottom: 2rem;
+                    }
+                    input {
+                        width: 3.3rem;
+                    }
+                }
+            }
+            #div--hp {
+                display: none;
+            }
+            #form--hp {
+                display: none;
+                #form--hp--pokes {
+                    #btn--hp {
+                        border: none;
+                        margin-bottom: 3rem;
+                        color: $white__medium !important;
+                        background-color: $purpura__light !important;
+                        cursor: pointer;
+                        padding: 0.8rem;
+                            &:hover{
+                            background-color: rgb(30, 18, 71) !important; 
+                            color:rgb(221, 212, 237);
+                        }
+                    }
+                    
+                }
+            }
+            #div--gracias {
+                display: none;
+            } 
+            #btn--pagar {
+                display: none;
+            }
+            
+            #div--id {
+                display: none;
+                #form--id {
+                    #btn--id {
+                        border: none;
+                        margin-bottom: 3rem;
+                        color: $white__medium !important;
+                        background-color: $purpura__light !important;
+                        cursor: pointer;
+                        padding: 0.8rem;
+                            &:hover{
+                            background-color: rgb(30, 18, 71) !important; 
+                            color:rgb(221, 212, 237);
+                        }
+                    }
+                }
+            }
+            #div-final {
+                display: none;
+                width: 60rem;
+            }
+            
+        }
+        #main-div {
+            display: none; 
+            animation: aparecer  650ms ease-in;
+            grid-template-columns: 1fr 1fr 1fr; 
+            grid-template-rows: 1fr 1fr; 
+            gap: 1em 1em; 
+            grid-template-areas: 
+            "f1 f2 f3"
+            "f4 f5 f6"; 
+            width: 60rem; 
+            height: 20rem;
+            background-color: rgb(7, 0, 10);
+            border-radius: 4px;
+            border: 3px;
+            border-style: solid;
+            border-color: rgb(8, 0, 17);
+            box-shadow: 0px 0px 5px 4px rgba(6, 1, 18, 0.2);
+            text-align: center;
+            margin-right: 4rem;
+        }
     }
-}
-
-#form--name {
-    display: block;
-}
-
-#nombre--usuario {
-    h3 {
-        font-family: 'pkmnfont' !important; 
-        font-size: 13px !important;
-    }
-}
-.main-subtitle {
-    display: none;
-    margin-bottom: 2rem;
-    justify-content: space-evenly;
-}
-#nombre--usuario {
-    margin-bottom: 1rem;
-    width: 16rem;
-    text-align: center;
 }
 
 .no-btn {
@@ -44,87 +211,6 @@
     transition: 0.3s;
     display: inline-block;
     text-decoration: none;
-}
-.btn--curar {
-    margin-left: 3rem;
-}
-
-#div-btn-poke {
-    display: none;
-}
-#btn--poke {
-    display: block;
-    
-}
-
-.btn--poke {
-    margin-left: 14rem;
-    margin-bottom: 2rem;
-}
-
-#p1--invalido {
-    display: none;
-}
-
-#main-div {
-    display: none; 
-    grid-template-columns: 1fr 1fr 1fr; 
-    grid-template-rows: 1fr 1fr; 
-    gap: 1em 1em; 
-    grid-template-areas: 
-    "f1 f2 f3"
-    "f4 f5 f6"; 
-    width: 60rem; 
-    height: 20rem;
-    background-color: rgb(7, 0, 10);
-    border-radius: 4px;
-    border: 3px;
-    border-style: solid;
-    border-color: rgb(8, 0, 17);
-    box-shadow: 0px 0px 5px 4px rgba(6, 1, 18, 0.2);
-    text-align: center;
-    margin-right: 4rem;
-}
-
-#input--hidden {
-    display: none;
-}
-
-#form--nombrar {
-    display: none;
-}
-
-#form--poke {
-    display: block;
-}
-
-#div--hp {
-    display: none;
-}
-
-#abrir--hp{ 
-    height: 5rem;
-    padding: 4rem;
-}
-
-#form--hp {
-    display: none;
-}
-
-#div--gracias {
-    display: none;
-}   
-#btn--pagar {
-    display: none;
-}
-
-#div--id {
-    display: none;
-}
-
-#div-final {
-    display: none;
-    width: 60rem;
 }
 
 /* -----------show forms ----------- */
@@ -149,9 +235,6 @@
 .input3--poke4 { display: none;}
 .input3--poke5 { display: none;}
 .input3--poke6 { display: none;}
-
-
-
 
 /* ------------grid cards-------------- */
 .card--1 { grid-area: f1;}
