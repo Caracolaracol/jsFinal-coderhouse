@@ -739,21 +739,39 @@ function idEncontrado(){
     for (i = 1; i <= numero; i++) {
         if (i === 1) {
             idEncontrado1 = pokemones.find(element => element.id === idABuscar1) ?? console.log("ID no corresponde")
+            if (idEncontrado1 === undefined) {
+                id1Parrafo.innerHTML = `un entrenador que está sentado en la sala de espera está reclamando que te estás llevando su pokemon! Ingresa el ID correcto por favor!`
+            }
         }
         if (i === 2) {
             idEncontrado2 = pokemones.find(element => element.id === idABuscar2) ?? console.log("ID no corresponde")
+            if (idEncontrado2 === undefined) {
+                id2Parrafo.innerHTML = `un entrenador que está sentado en la sala de espera está reclamando que te estás llevando su pokemon! Ingresa el ID correcto por favor!`
+            }
         }
         if (i === 3) {
             idEncontrado3 = pokemones.find(element => element.id === idABuscar3) ?? console.log("ID no corresponde")
+            if (idEncontrado3 === undefined) {
+                id3Parrafo.innerHTML = `un entrenador que está sentado en la sala de espera está reclamando que te estás llevando su pokemon! Ingresa el ID correcto por favor!`
+            }
         }
         if (i === 4) {
             idEncontrado4 = pokemones.find(element => element.id === idABuscar4) ?? console.log("ID no corresponde")
+            if (idEncontrado4 === undefined) {
+                id4Parrafo.innerHTML = `un entrenador que está sentado en la sala de espera está reclamando que te estás llevando su pokemon! Ingresa el ID correcto por favor!`
+            }
         }
         if (i === 5) {
             idEncontrado5 = pokemones.find(element => element.id === idABuscar5) ?? console.log("ID no corresponde")
+            if (idEncontrado5 === undefined) {
+                id5Parrafo.innerHTML = `un entrenador que está sentado en la sala de espera está reclamando que te estás llevando su pokemon! Ingresa el ID correcto por favor!`
+            }
         }
         if (i === 6){
             idEncontrado6 = pokemones.find(element => element.id === idABuscar6) ?? console.log("ID no corresponde")
+            if (idEncontrado6 === undefined) {
+                id6Parrafo.innerHTML = `un entrenador que está sentado en la sala de espera está reclamando que te estás llevando su pokemon! Ingresa el ID correcto por favor!`
+            }
         }
     }
 }
@@ -823,14 +841,14 @@ async function contenedorHtml() {
     .then(response => response.json())
     .then(async data => {
     let arrayPkmFinal = await data.results // pido sólo lo que contiene la propiedad results(el array con los 150 pokemon)
-    for (i = 1; i <= numero; i++) {
+    for (i = 1; i <= numero; i++) { // ciclo for para cada pokemon(los 6)
         if (i === 1) {
-            let miau = arrayPkmFinal.find((elem) => elem.name == ids[0].nombre)
-            let urlApiPoke1 = miau.url 
+            let miau = arrayPkmFinal.find((elem) => elem.name == ids[0].nombre) // busco el pokemon en el array
+            let urlApiPoke1 = miau.url // me consigo la url del pokemon encontrado
             fetch(urlApiPoke1)
             .then(resp => resp.json())
             .then(async dat => {
-                let sprites = await dat.sprites
+                let sprites = await dat.sprites //sprite de pokemon en .png
                 container1.innerHTML = `<p>${ids[0].nombre}</p>
                                         <p>Nivel${ids[0].nivel}</p>
                                         <img src="${sprites.front_default}">
@@ -846,7 +864,7 @@ async function contenedorHtml() {
                 let sprites = await dat.sprites
                 container2.innerHTML = `<p>${ids[1].nombre}</p>
                                         <p>Nivel${ids[1].nivel}</p>
-                                        <img src="${sprites.front_default}">
+                                        <img src="${sprites.front_default}" class="pkm__sprite">
                                         `
             })
         }
@@ -859,7 +877,7 @@ async function contenedorHtml() {
                 let sprites = await dat.sprites
                 container3.innerHTML = `<p>${ids[2].nombre}</p>
                                         <p>Nivel${ids[2].nivel}</p>
-                                        <img src="${sprites.front_default}">
+                                        <img src="${sprites.front_default}" class="pkm__sprite">
                                         `
             })
         }
@@ -872,7 +890,7 @@ async function contenedorHtml() {
                 let sprites = await dat.sprites
                 container4.innerHTML = `<p>${ids[3].nombre}</p>
                                         <p>Nivel${ids[3].nivel}</p>
-                                        <img src="${sprites.front_default}">
+                                        <img src="${sprites.front_default}" class="pkm__sprite">
                                         `
             })
         }
@@ -885,7 +903,7 @@ async function contenedorHtml() {
                 let sprites = await dat.sprites
                 container5.innerHTML = `<p>${ids[4].nombre}</p>
                                         <p>Nivel${ids[4].nivel}</p>
-                                        <img src="${sprites.front_default}">
+                                        <img src="${sprites.front_default}" class="pkm__sprite">
                                         `
             })
         }
@@ -898,7 +916,7 @@ async function contenedorHtml() {
                 let sprites = await dat.sprites
                 container6.innerHTML = `<p>${ids[5].nombre}</p>
                                         <p>Nivel${ids[5].nivel}</p>
-                                        <img src="${sprites.front_default}">
+                                        <img src="${sprites.front_default}" class="pkm__sprite">
                                         `
             })
         }
